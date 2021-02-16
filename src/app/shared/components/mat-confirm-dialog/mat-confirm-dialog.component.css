@@ -1,0 +1,10 @@
+.btn-dialog-close{
+    width: 45px;
+    min-width: 0px !important;
+    height: 40px;
+    padding: 0px !important;
+  }
+  .cdk-global-overlay-wrapper  .cdk-overlay-pane.confirm-dialog-container{
+    position: absolute !important;
+    top:20px !important;
+}

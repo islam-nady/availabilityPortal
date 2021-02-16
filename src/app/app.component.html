@@ -1,0 +1,8 @@
+<!-- <ng-container *ngIf="isLogin">
+    <app-default></app-default>
+</ng-container> -->
+<div class="pages-body">
+    <div [ngClass]="{'notlogin':isLogin,'pages-content':!isLogin}">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

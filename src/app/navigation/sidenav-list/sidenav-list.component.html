@@ -1,0 +1,70 @@
+<mat-list>
+
+    <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <mat-icon>home</mat-icon>
+        <span class="nav-caption">Home</span>
+ </a>
+    <a mat-list-item  routerLink="/request" routerLinkActive="active" >
+        <mat-icon>format_list_numbered</mat-icon>
+        <span class="nav-caption">Top 50 Vaiolate</span>
+ </a>
+
+    <a mat-list-item  routerLink="/vaiolate" routerLinkActive="active">
+        <mat-icon>transfer_within_a_station</mat-icon>
+        <span class="nav-caption">Vaiolate</span>
+ </a>
+   
+    <a mat-list-item  routerLink="/warning" routerLinkActive="active" >
+        <mat-icon>warning</mat-icon>
+        <span class="nav-caption">Warning</span>
+ </a>
+   
+
+    <a mat-list-item  routerLink="/safe" routerLinkActive="active" >
+        <mat-icon>security</mat-icon>
+        <span class="nav-caption">Safe</span>
+ </a>
+ <a mat-list-item  routerLink="/countnode" routerLinkActive="active" >
+    <mat-icon>dashboard_customize</mat-icon>
+    <span class="nav-caption">Count Ticket Per Node</span>
+</a>
+<a mat-list-item  routerLink="/customerInfoPerYear" routerLinkActive="active" >
+    <mat-icon>people_outline</mat-icon>
+    <span class="nav-caption">Customer Info Per Year</span>
+</a>
+<a mat-list-item  routerLink="/customerInfoPerMonth" routerLinkActive="active" >
+    <mat-icon>people</mat-icon>
+    <span class="nav-caption">Customer Info Per Month</span>
+</a>
+
+    
+
+   <!-- <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+    <mat-icon >home</mat-icon>
+    <span class="full-width nav-caption" *ngIf="isExpanded || isShowing">More</span>
+   
+    <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+</mat-list-item>
+<div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+    <a mat-list-item routerLink="/steps" (click)="onSidenavClose()">Stepper</a>
+    <a mat-list-item routerLink="#" (click)="onSidenavClose()">Submenu Item 2</a>
+    <mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+        <span class="full-width" *ngIf="isExpanded || isShowing">Nested Menu</span>
+        <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+ </a>
+    <div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+        <a mat-list-item routerLink="#" (click)="onSidenavClose()">SubSubmenu Item 1</a>
+        <a mat-list-item routerLink="#" (click)="onSidenavClose()">SubSubmenu Item 2</a>
+    </div>
+</div> -->
+
+    <!-- <mat-list-item [matMenuTriggerFor]="menu" >
+        <mat-icon>unfold_more</mat-icon>
+        <a matline>Actions Account</a>
+ </a>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onSidenavClose()" >view</button>
+        <button mat-menu-item (click)="onSidenavClose()" >add</button>
+    </mat-menu> -->
+
+</mat-list>

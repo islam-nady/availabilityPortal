@@ -1,0 +1,66 @@
+
+<div class="search-div" fxLayout="row">
+    <mat-list-item class="header-tag" routerLink="/" > Home </mat-list-item>/
+   
+    <mat-list-item class="header-tag active" routerLink="#"> Top 50 Vaiolate</mat-list-item>
+
+</div>
+
+
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>
+            Top 50 Vaiolate
+        </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+<div class="search-div">
+    <!-- <button mat-raised-button (click)="onCreate()">
+        <mat-icon>add</mat-icon>Create
+    </button> -->
+    <mat-form-field class="search-form-field" floatLabel="never">
+        <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()"> 
+       <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+            <mat-icon>close</mat-icon>
+        </button> 
+    </mat-form-field>
+</div>
+<div class="example-container mat-elevation-z8">
+<mat-table [dataSource]="dataSource" matSort >
+
+
+    <ng-container matColumnDef="nodeID">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Node ID</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="nodeID"> {{element.nodeID}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="availability">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> Availability</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element"  data-label="availability"> <b>{{element.availability |number:'2.0-2'}}% </b></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+            <div class="spinner">
+                <mat-spinner></mat-spinner>
+               </div>
+        </mat-footer-cell>
+
+    </ng-container>
+  
+    <!-- <ng-container matColumnDef="noData">
+        <td mat-footer-cell *matFooterCellDef colspan="6">
+            No data
+        </td>
+
+    </ng-container> -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row >
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row >
+    <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':(dataSource.data.length!=0)}"></mat-footer-row>
+    <!-- <tr mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource!=null && dataSource.data.length==0)}"></tr> -->
+
+</mat-table>
+</div>
+<mat-paginator  [length]="dataSource.data.length" [pageSizeOptions]="[5, 10, 20, 100]" [pageSize]="5"   showFirstLastButtons ></mat-paginator>
+</mat-card>
+
+<!-- (page)="pageChanged($event)" -->

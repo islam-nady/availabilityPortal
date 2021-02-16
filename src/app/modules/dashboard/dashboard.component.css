@@ -1,0 +1,31 @@
+mat-card{
+  height: 100%;
+  width: 100%;
+}
+.mat-card-header-text{
+  margin: 0 !important;
+}
+
+.mat-card-header .mat-card-title{
+  font-size: 18px !important;
+}
+.chart-wrapper{
+  padding: 30px 0;
+  height: 300px;
+}
+canvas{
+  height: 250px !important;
+}
+.total{
+color: #838486 !important;
+font-size: 15px;
+}
+.mat-badge-content{
+  background: #5eafbf !important;
+}
+.mat-badge-medium.mat-badge-after .mat-badge-content{
+  right: -25px;
+}
+.mat-badge-medium.mat-badge-above .mat-badge-content{
+  top: -1px;
+}

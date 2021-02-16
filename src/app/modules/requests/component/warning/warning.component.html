@@ -1,0 +1,82 @@
+
+<div class="search-div" fxLayout="row">
+    <mat-list-item class="header-tag" routerLink="/" > Home </mat-list-item>/
+   
+    <mat-list-item class="header-tag active" routerLink="#">  Warning </mat-list-item>
+
+</div>
+
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>
+           Warning
+        </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+
+<div class="search-div">
+
+    <mat-form-field class="search-form-field" floatLabel="never">
+        <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()"> 
+       <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+            <mat-icon>close</mat-icon>
+        </button> 
+    </mat-form-field>
+</div>
+
+<mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+
+    <ng-container matColumnDef="accountName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> Account Name </b></mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="accountName"> {{element.accountName}} </mat-cell>
+    </ng-container>
+
+
+   
+
+
+    <ng-container matColumnDef="accountNumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Account Number</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="accountNumber"> {{element.accountNumber}} </mat-cell>
+    </ng-container>
+
+   
+
+  
+ <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef><b> Action</b></mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="action">
+            <button mat-button (click)="accountNode(element.accountName)">
+                <mat-icon>launch</mat-icon> details
+            </button>
+           
+        </mat-cell>
+
+    </ng-container>
+   
+    <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+            <div class="spinner">
+            <mat-spinner></mat-spinner>
+           </div>
+        </mat-footer-cell>
+
+    </ng-container>
+  
+    <!--<ng-container matColumnDef="noData">
+        <td mat-footer-cell *matFooterCellDef colspan="6">
+            No data
+        </mat-cell>
+
+    </ng-container> -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+   <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':(dataSource.data.length!=0)}"></mat-footer-row>
+    <!--<mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource!=null && dataSource.data.length==0)}"></tr> -->
+
+</mat-table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" [pageSize]="5"   showFirstLastButtons></mat-paginator>
+
+
+</mat-card>

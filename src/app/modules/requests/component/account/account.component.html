@@ -1,0 +1,84 @@
+<!-- 
+  <form [formGroup]="accountService.form" class="normal-form" (submit)="onSubmit()">
+    <mat-grid-list cols="2" rowHeight="300px">
+      <mat-grid-tile>
+        <div class="controles-container">
+         
+          <mat-form-field>
+            <input formControlName="userName" matInput placeholder=" User Name*">
+            <mat-error>This field is mandatory.</mat-error> 
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="passWord" matInput placeholder="PassWord">
+            <mat-error>Invalid password.</mat-error>
+          </mat-form-field>
+        
+        </div>
+     </mat-grid-tile>
+   
+      
+          <div class="button-row">
+            <button mat-raised-button color="primary" type="submit" [disabled]="accountService.form.invalid" >Login</button>
+            
+          </div>
+        
+    
+    </mat-grid-list>
+  </form> -->
+
+
+
+
+  <div class="content-body">
+    <mat-card>
+        <mat-card-content>
+            <div class="header">
+             <a routerLink="#" style="font-family: 'Pirata One', cursive;font-size:35px;color:#d0d0d0;text-shadow: 1px 1px 10px #fff;"><img src="../../../assets/image/telecome.png" height="55" width="40"/>Availability Portal</a>
+                <!-- <img src="../../../../../assets/image/logo.png"  height="60" width="100%"/> -->
+            </div>
+             <h2>Login to Continue</h2>
+            <form (ngSubmit)="onSubmit()"  [formGroup]="accountService.form">
+                <div class="email-input form-input">
+                  <!-- class="email-input form-input" -->
+                    <!--     Email       -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>User Name</mat-label>
+                        <input formControlName="userName" matInput required>
+                        <button mat-icon-button matSuffix >
+                          <mat-icon>account_circle</mat-icon> 
+                        </button>
+                       
+                        
+                        <!-- <mat-error *ngIf="accountService.form.userName.errors?.required">
+                         Required UserName  
+                        </mat-error> -->
+                      
+                    </mat-form-field>
+                </div>
+                <div class="form-input">
+                    <!-- <span class="aLink">Forgot Password ?</span> -->
+                
+                     <!--    Password      -->
+                     <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input formControlName="passWord" matInput type="password" required>
+                         <button mat-icon-button matSuffix >
+                            <mat-icon>https</mat-icon> 
+                          </button>
+                    
+                    
+                        <!-- <mat-error>{{error}}</mat-error> -->
+                       
+                    </mat-form-field> 
+
+                </div>
+                <button mat-flat-button class="login" type="submit" >Login</button>
+            </form>
+       
+        </mat-card-content>
+    </mat-card>
+
+</div>
+
+
+

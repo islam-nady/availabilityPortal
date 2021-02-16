@@ -1,0 +1,92 @@
+.content-body{
+    min-height:100%;
+    padding:30px 1rem;
+    background-image:url("../../../../../assets/image/d1.jpeg") ;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: block;
+  }
+   
+  .content-body::before{
+    content: "";
+  position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#838586eb;
+  
+  }
+  h2{
+    text-align: left;
+      margin-left: 10%;
+      color: #380417;
+  }
+  mat-card{
+    background-color:#fcfdffc4;
+    max-width: 600px;
+    margin: 2em auto;
+    text-align: center;
+    height: 500px;
+    border-radius:30px 0 30px 0;
+    padding-top: 100px;
+  }
+  .header{
+     position: absolute;
+    text-align: center;
+    /* margin: 0 auto 30px auto;  */
+    width: 300px;
+    height: 90px;
+    border-radius:15px 0px; 
+    top: -30px;
+    right: 10px;
+    /* background-color:#380417 ; */
+    background-color:#380417 ;
+    background:-o-linear-gradient(-45deg,#380417, #7d133a,#380417);
+    background: -webkit-linear-gradient(-45deg,#380417, #7d133a,#380417);
+    background:-moz-linear-gradient(-45deg,#380417, #7d133a,#bb2a5f);
+    background: linear-gradient(-45deg,#380417, #7d133a,#380417);
+    color:#fff;
+    padding:15px
+   
+  
+  }
+  .full-width{
+    width: 80%;
+  }
+  .forgot-password{
+    padding-left: 0px;
+  }
+  .email-input{
+    padding-top: 20px;
+  }
+  .aLink{
+    float: right;
+    padding-right:60px;
+    text-decoration:none;
+  }
+  .form-input{
+    margin-bottom:20px
+  }
+  .login{
+    background-color:#380417 ;
+    background:-o-linear-gradient(top, #7d133a,#380417);
+    background: -webkit-linear-gradient(top, #7d133a,#380417);
+    background:-moz-linear-gradient(top, #7d133a,#380417);
+    background: linear-gradient(top, #7d133a,#380417);
+  
+     color:#ffffff;
+     width: 150px;
+     border-radius: 10px;
+     margin-top: 20px;
+  }
+ 
+  input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+ { -webkit-text-fill-color: #380417;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

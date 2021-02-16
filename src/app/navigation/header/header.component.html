@@ -1,0 +1,44 @@
+<mat-toolbar>
+    <div>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div>
+       
+        <a routerLink="#" style="font-family: 'Pirata One', cursive;font-size:27px;color:#d0d0d0;text-shadow: 1px 1px 10px #fff;"><img src="../../../assets/image/telecome.png" height="48" width="34"/>Availability Portal</a>
+    </div>
+   
+   
+    <div fxFlex fxLayout fxLayoutAlign="end" >
+        <ul fxLayout fxLayoutGap="15px" class="navigation.items">
+           
+            <li>
+                <button mat-icon-button [matMenuTriggerFor]="notification">
+                    <mat-icon matBadge="0" matBadgeColor="warn">notifications_active</mat-icon>
+                </button>
+                <!-- <mat-list-item [matMenuTriggerFor]="menu" >
+                    <mat-icon>unfold_more</mat-icon>
+                    <a matline>Actions Account</mat-list-item>
+                </mat-list-item> -->
+                <mat-menu #notification="matMenu">
+                    <button mat-menu-item> <mat-icon>notifications</mat-icon> first notifications </button>
+                    <mat-divider></mat-divider>
+                    <button mat-menu-item><mat-icon>notifications</mat-icon> seconed notifications </button>
+                </mat-menu>
+            </li>
+            <li>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <span style="font-family: 'Pirata One', cursive;font-size: 18px;">{{userName}}</span>
+                    <mat-icon> person_outline </mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="logOut()">
+                        <mat-icon>exit_to_app</mat-icon> Sign out
+                    </button>
+                </mat-menu>
+            </li>
+        </ul>
+    </div>
+
+</mat-toolbar>

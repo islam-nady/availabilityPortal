@@ -1,0 +1,12 @@
+<div>
+    <div class="content-container">
+        
+       <button  class="btn-dialog-close" mat-stroked-button (click)="onClose()" id="close-icon" >X</button> 
+      
+       <span class="content-span full-width">
+            Are you Sure to delete this Record ?
+        </span>
+    </div>
+    <button mat-flat-button id="no-button" (click)="onClose()">NO</button>
+    <button mat-flat-button id="yes-button" (click)=" onDelete()">YES</button>
+</div>

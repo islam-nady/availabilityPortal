@@ -1,0 +1,36 @@
+mat-cell:first-of-type, mat-header-cell:first-of-type{
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 48% !important;
+    width: 48%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    border-bottom: 1px solid #ececec;
+  }
+  /* mat-cell:nth-of-type(4) , mat-header-cell:nth-of-type(4) {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 16% !important;
+    width: 16%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    border-bottom: 1px solid #ececec;
+  } */
+  mat-cell, mat-header-cell{
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 17% !important;
+    width: 17%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    border-bottom: 1px solid #ececec;
+  }

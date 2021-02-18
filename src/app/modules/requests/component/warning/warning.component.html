@@ -23,8 +23,9 @@
         </button> 
     </mat-form-field>
 </div>
+<div class="example-container mat-elevation-z8 ">
 
-<mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+<mat-table [dataSource]="dataSource" matSort >
 
 
     <ng-container matColumnDef="accountName">
@@ -79,6 +80,7 @@
     <!--<mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource!=null && dataSource.data.length==0)}"></tr> -->
 
 </mat-table>
+</div>
 <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" [pageSize]="5"   showFirstLastButtons></mat-paginator>
 
 

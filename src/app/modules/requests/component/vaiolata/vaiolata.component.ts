@@ -22,7 +22,7 @@ export class VaiolataComponent implements OnInit {
   customer :ICustomer []=[];
   @ViewChild(MatSort) sort?:MatSort ;
   @ViewChild(MatPaginator) paginator?:MatPaginator ;
-  displayedColumns: string[] = ['accountName','accountNumber','action'];
+  displayedColumns: string[] = ['accountName','accountNumber','countNode','action'];
   dataSource=new MatTableDataSource(this.customer);
  
   constructor(private vaiolateService:VaiolateService,

@@ -41,7 +41,10 @@
         <mat-cell *matCellDef="let element" data-label="accountNumber"> {{element.accountNumber}} </mat-cell>
     </ng-container>
 
-   
+    <ng-container matColumnDef="countNode">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> Count Nodes</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="countNode"> {{element.countNode}} </mat-cell>
+    </ng-container>
 
   
  <ng-container matColumnDef="action">

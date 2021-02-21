@@ -38,7 +38,14 @@ export class NodeTicketComponent implements OnInit {
   barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartPlugins = [];
-  
+  colors: Color[] = [
+    {
+      backgroundColor: [
+       'DarkBlue', 'blue', 'Salmon','red',
+        'green',
+        'yellow','pink','orange','purple','brown','DeepPink','DarkOrange'
+      ]
+    }]
   barChartData: ChartDataSets[] = [
     { data: [], label: 'Sum TTR For Ticket Per Node' }
   ];

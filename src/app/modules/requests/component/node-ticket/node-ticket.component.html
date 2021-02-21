@@ -25,13 +25,6 @@
 <div class="example-container mat-elevation-z8">
 <mat-table [dataSource]="dataSource" matSort >
 
-
-   
-
-
-   
-
-
     <ng-container matColumnDef="subject">
         <mat-header-cell *matHeaderCellDef mat-sort-header><b>Subject</b> </mat-header-cell>
         <mat-cell *matCellDef="let element" data-label="subject"> {{element.subject}} </mat-cell>
@@ -79,11 +72,12 @@
 
 
 </mat-card>
-
+<div class="row mx-0 pt-4 mat-elevation-z8">
+    <div class="col-sm-12 col-md-6">
   <mat-card class="example-card">
     <mat-card-header>
         <mat-card-title>
-         charts
+            Sum TTR For Ticket Per Node
         </mat-card-title>
     </mat-card-header>
     <mat-divider></mat-divider>
@@ -95,6 +89,7 @@
 <div class="chart-wrapper">
     <canvas baseChart 
     [datasets]="barChartData"
+    [colors]="colors"
     [labels]="barChartLabels"
     [options]="barChartOptions"
     [plugins]="barChartPlugins"
@@ -104,13 +99,13 @@
 </div>
 </mat-card>  
 
+</div>
 
-
-
+<div class="col-sm-12 col-md-6">
 <mat-card class="example-card">
     <mat-card-header>
         <mat-card-title>
-         charts
+            Node Availability Per Month
         </mat-card-title>
     </mat-card-header>
     <mat-divider></mat-divider>
@@ -122,6 +117,7 @@
 <div class="chart-wrapper">
     <canvas baseChart 
     [datasets]="barChartDataAvailability"
+    [colors]="colors"
     [labels]="barChartLabelsAvailability"
     [options]="barChartOptionsAvailability"
     [plugins]="barChartPluginsAvailability"
@@ -130,3 +126,5 @@
   </canvas>
 </div>
 </mat-card>  
+</div>
+</div>

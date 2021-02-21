@@ -10,7 +10,7 @@ import { Color, Label } from 'ng2-charts';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { IRequest } from '../../model/IRequest';
 import { NodeTicketsService } from '../../service/node-tickets.service';
-
+import {FormGroup,FormControl, Validators} from '@angular/forms';
 @Component({
   selector: 'app-node-ticket',
   templateUrl: './node-ticket.component.html',
@@ -30,6 +30,18 @@ export class NodeTicketComponent implements OnInit {
   sumTTR:number=0;
   nodeId:string="";
   nodeAvailability:number=0;
+//form
+form: FormGroup = new FormGroup({
+  id: new FormControl(0),
+  value: new FormControl('',[Validators.required]),
+  orderInList: new FormControl(0),
+      
+});
+
+
+
+
+
   // bar chart 
   barChartOptions: ChartOptions = {
     responsive: true,

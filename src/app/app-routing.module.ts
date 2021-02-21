@@ -10,6 +10,7 @@ import { AccountComponent } from './modules/requests/component/account/account.c
 import { CountNodeComponent } from './modules/requests/component/count-node/count-node.component';
 import { CustomerInfoPerMonthComponent } from './modules/requests/component/customer-info-per-month/customer-info-per-month.component';
 import { CustomerInfoPerYearComponent } from './modules/requests/component/customer-info-per-year/customer-info-per-year.component';
+import { NodeTicketComponent } from './modules/requests/component/node-ticket/node-ticket.component';
 import { RequestComponent } from './modules/requests/component/request/request.component';
 import { SafeCustomerComponent } from './modules/requests/component/safe-customer/safe-customer.component';
 import { SafeComponent } from './modules/requests/component/safe/safe.component';
@@ -76,6 +77,11 @@ const routes: Routes = [
     {
       path:'safeCustomer',
       component:SafeCustomerComponent,
+      canActivate:[AuthGuardService]
+    },
+    {
+      path:'nodeticket',
+      component:NodeTicketComponent,
       canActivate:[AuthGuardService]
     },
     

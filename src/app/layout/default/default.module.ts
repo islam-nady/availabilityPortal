@@ -35,6 +35,8 @@ import { CustomerinfoPerYearService } from 'src/app/modules/requests/service/cus
 import { CustomerInfoPerYearComponent } from 'src/app/modules/requests/component/customer-info-per-year/customer-info-per-year.component';
 import { CustomerInfoPerMonthComponent } from 'src/app/modules/requests/component/customer-info-per-month/customer-info-per-month.component';
 import { SammuryService } from 'src/app/modules/requests/service/sammury.service';
+import { NodeTicketsService } from 'src/app/modules/requests/service/node-tickets.service';
+import { NodeTicketComponent } from 'src/app/modules/requests/component/node-ticket/node-ticket.component';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -53,6 +55,7 @@ import { SammuryService } from 'src/app/modules/requests/service/sammury.service
   CountNodeComponent,
   CustomerInfoPerYearComponent,
   CustomerInfoPerMonthComponent,
+  NodeTicketComponent,
 
 
     
@@ -75,7 +78,7 @@ import { SammuryService } from 'src/app/modules/requests/service/sammury.service
   ],
   providers:[
     EmpService,RequestService,SafeService,WarningService,VaiolateService
-   ,SafecustomerService,Title,CountNodeService,SammuryService,CustomerinfoPerYearService],
+   ,SafecustomerService,Title,CountNodeService,SammuryService,NodeTicketsService,CustomerinfoPerYearService],
   entryComponents:[MatConfirmDialogComponent]
 
 

@@ -22,7 +22,7 @@ export class SafeCustomerComponent implements OnInit {
   nodeAvailability :INodeAvailability []=[];
   @ViewChild(MatSort) sort?:MatSort ;
   @ViewChild(MatPaginator) paginator?:MatPaginator ;
-  displayedColumns: string[] = ['nodeID',  'availability'];
+  displayedColumns: string[] = ['nodeID',  'availability','action'];
   dataSource=new MatTableDataSource(this.nodeAvailability);
  
   
@@ -45,8 +45,8 @@ export class SafeCustomerComponent implements OnInit {
     if(this._activatedRoute.snapshot.queryParams.account){
       this.name = this._activatedRoute.snapshot.queryParams.account;
       this.kind=this._activatedRoute.snapshot.queryParams.kind;
-console.log(this.name);
-console.log(this.kind);
+// console.log(this.name);
+// console.log(this.kind);
 
     }
     this.safecustomerService.getRequests(this.name,this.kind).subscribe(res=>{
@@ -66,7 +66,12 @@ console.log(this.kind);
  
 
 
+  NodeTicket(nodeId:string,availability:number){
+    console.log(nodeId);
+    console.log(availability);
+    this.router.navigate(['/nodeticket'],{queryParams:{node:nodeId,availabilityPercent:availability}})
 
+  }
 
 
 

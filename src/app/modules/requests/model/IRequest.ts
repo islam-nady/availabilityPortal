@@ -8,8 +8,10 @@ export interface IRequest{
     completed_Time :number;
     resolved_Date :number;
     nodeID :number;
-    tTR :number;
-    mTTR :number;
-    availability :number;
+    ttr :number;
+    creationDateTime :Date;
+    completeDateTime :Date;
+    resolveDateTime :Date;
+
 
 }

@@ -11,3 +11,18 @@ canvas{
    font-weight: 700;
     color: grey;
 }
+
+label{
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    display: inline;
+    color: #920439;
+
+}
+p{
+    padding-left: 15px;
+    font-size: 14px;
+    display: inline;
+    color: grey;
+}

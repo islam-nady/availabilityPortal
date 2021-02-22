@@ -11,6 +11,7 @@ import { DialogService } from 'src/app/shared/services/dialog.service';
 import { IRequest } from '../../model/IRequest';
 import { NodeTicketsService } from '../../service/node-tickets.service';
 import {FormGroup,FormControl, Validators} from '@angular/forms';
+import { INodeDetails } from '../../model/nodeDetails';
 @Component({
   selector: 'app-node-ticket',
   templateUrl: './node-ticket.component.html',
@@ -21,15 +22,24 @@ export class NodeTicketComponent implements OnInit {
   searchKey:string ='' ;
  
   month=new Date().toLocaleDateString('default',{month:'long'});
-  request :IRequest []=[];
+  //requests :IRequest []=[];
+  nodeDetails=<INodeDetails>{};
+
   @ViewChild(MatSort) sort?:MatSort ;
   @ViewChild(MatPaginator) paginator?:MatPaginator ;
   displayedColumns: string[] = ['subject','category', 'request_Status','nodeID','ttr'];
-  dataSource=new MatTableDataSource(this.request);
+  dataSource=new MatTableDataSource(this.nodeDetails.requests);
  
   sumTTR:number=0;
   nodeId:string="";
   nodeAvailability:number=0;
+  acccountName:string="";
+  acccountNumber:string="";
+  
+  
+
+
+
 //form
 form: FormGroup = new FormGroup({
   id: new FormControl(0),
@@ -92,21 +102,25 @@ barChartDataAvailability: ChartDataSets[] = [
    
     if(this._activatedRoute.snapshot.queryParams.node){
       this.nodeId = this._activatedRoute.snapshot.queryParams.node;
-      this.nodeAvailability = this._activatedRoute.snapshot.queryParams.availabilityPercent;
+    //  this.nodeAvailability = this._activatedRoute.snapshot.queryParams.availabilityPercent;
     
 //      console.log(this.nodeAvailability);
 
     }
     this.nodeTicketService.getRequests(this.nodeId).subscribe(res=>{
-      this.request = res as IRequest[];
-  //    console.log(res);
-      this.dataSource=new MatTableDataSource(this.request);
+      this.nodeDetails = res as INodeDetails ;
+     
+      this.dataSource=new MatTableDataSource(this.nodeDetails.requests);
       this.dataSource.paginator=this.paginator as MatPaginator;
-     res.forEach(element => {
+     this.nodeDetails.requests.forEach(element => {
        this.sumTTR+=element.ttr;
        
      });
-   
+
+     
+     this.nodeAvailability=res.availabilityNode;
+      this.acccountName=res.accountName;
+      this.acccountNumber=res.accountNumber;
   this.barChartData= [
     { data: [this.sumTTR], label: 'Sum TTR For Ticket Per Node' }
   ];

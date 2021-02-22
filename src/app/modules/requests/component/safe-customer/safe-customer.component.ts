@@ -66,10 +66,10 @@ export class SafeCustomerComponent implements OnInit {
  
 
 
-  NodeTicket(nodeId:string,availability:number){
+  NodeTicket(nodeId:string){
     console.log(nodeId);
-    console.log(availability);
-    this.router.navigate(['/nodeticket'],{queryParams:{node:nodeId,availabilityPercent:availability}})
+   
+    this.router.navigate(['/nodeticket'],{queryParams:{node:nodeId}})
 
   }
 

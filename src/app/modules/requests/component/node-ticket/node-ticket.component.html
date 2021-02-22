@@ -11,29 +11,19 @@
            NodeDetails
         </mat-card-title>
     </mat-card-header>
-    <mat-divider></mat-divider>
-    <form [formGroup]="form" class="example-form">
-        <mat-form-field class="example-full-width">
-          <mat-label>value</mat-label>
-          <input type="text"  id="picvalid" matInput formControlName="value" >
-        
-         
-         
-        </mat-form-field><span style="margin-left: 10px;"> </span>
-        
-        <mat-form-field class="example-full-widtho">
-          <mat-label>order</mat-label>
-         
-          <input type="number"  id="piclid" matInput formControlName="orderInList"  >
-           
-           
-        </mat-form-field>
-       
-        <button type="submit" mat-raised-button    class="search">save</button>
-      </form>
-    <!-- your content here -->
-    </mat-card>
+ <mat-divider></mat-divider>
+ <label>Node Id:<p>{{nodeId}}</p> </label>
+ <hr>
+ <label>Account Name:<p>{{acccountName}}</p> </label>
+ <hr>
+ <label>Account Number:<p>{{acccountNumber}}</p> </label>
+ <hr>
+ <label>Node Availability:<p>{{nodeAvailability|number:'2.0-2'}}</p> </label>
+ 
+</mat-card>
 <mat-divider></mat-divider>
+
+
 <mat-card class="example-card">
     <mat-card-header>
         <mat-card-title>

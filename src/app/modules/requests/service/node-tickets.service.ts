@@ -1,17 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IRequest } from '../model/IRequest';
+import { INodeDetails } from '../model/nodeDetails';
+//import { IRequest } from '../model/IRequest';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NodeTicketsService {
 
-  url =  "http://172.29.29.8:8014/api/customer/node";
+  url =  "http://172.29.29.8:8014/api/customer/nodedetails";
    constructor(private http: HttpClient) { }
 
-   getRequests(nodeId:string): Observable<IRequest[]>{
-     return this.http.get<IRequest[]>(`${this.url}/`+nodeId);
+   getRequests(nodeId:string): Observable<INodeDetails>{
+     return this.http.get<INodeDetails>(`${this.url}/`+nodeId);
    }
 }

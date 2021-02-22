@@ -31,12 +31,25 @@
   mat-cell:last-of-type, mat-header-cell:last-of-type{
     word-wrap: break-word !important;
     white-space: unset !important;
-    flex: 0 0 40% !important;
-    width: 40%;
+    flex: 0 0 38% !important;
+    width: 38%;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
     -webkit-hyphens: auto;
     hyphens: auto;
     border-bottom: 1px solid #ececec;
+  }
+  .text-success{
+    color:green !important
+  }
+  .text-warning{
+    color: orange!important;
+  }
+  .text-danger{
+    color: crimson !important;
+  }
+  button{
+    padding-right: 15px !important;
+    padding-left: 0 !important;
   }

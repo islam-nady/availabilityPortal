@@ -51,13 +51,13 @@
         <mat-header-cell *matHeaderCellDef><b> Action</b></mat-header-cell>
         <mat-cell *matCellDef="let element" data-label="action">
             <button mat-button (click)="accountNode(element.accountName,'safe')">
-                <mat-icon>launch</mat-icon> Safe
+                <mat-icon class="text-success">security</mat-icon> Safe
             </button>
             <button mat-button (click)="accountNode(element.accountName,'warning')">
-                <mat-icon>launch</mat-icon> Warning
+                <mat-icon class="text-warning">warning</mat-icon> Warning
             </button>
             <button mat-button (click)="accountNode(element.accountName,'vaiolate')">
-                <mat-icon>launch</mat-icon> Vaiolate
+                <mat-icon style="color: red;">transfer_within_a_station</mat-icon> Vaiolate
             </button>
         </mat-cell>
 

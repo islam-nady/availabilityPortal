@@ -10,11 +10,13 @@ import {AccountComponent} from './modules/requests/component/account/account.com
 import {AccountService} from './modules/requests/service/account.service';
 import {FormsModule, ReactiveFormsModule, RequiredValidator} from '@angular/forms';
 import { DefaultComponent } from './layout/default/default.component';
+import { AllCustomerComponent } from './modules/requests/component/all-customer/all-customer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccountComponent,
+    
     
     
     

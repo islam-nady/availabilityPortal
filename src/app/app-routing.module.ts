@@ -7,6 +7,7 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { EmployeeComponent } from './modules/employee/employee.component';
 import {PanelComponent} from './modules/panel/panel.component';
 import { AccountComponent } from './modules/requests/component/account/account.component';
+import { AllCustomerComponent } from './modules/requests/component/all-customer/all-customer.component';
 import { CountNodeComponent } from './modules/requests/component/count-node/count-node.component';
 import { CustomerInfoPerMonthComponent } from './modules/requests/component/customer-info-per-month/customer-info-per-month.component';
 import { CustomerInfoPerYearComponent } from './modules/requests/component/customer-info-per-year/customer-info-per-year.component';
@@ -54,6 +55,11 @@ const routes: Routes = [
       canActivate:[AuthGuardService]
     },
 
+    {
+      path:'allCustomer',
+      component:AllCustomerComponent,
+      canActivate:[AuthGuardService]
+    },
     {
       path:'customerInfoPerYear',
       component:CustomerInfoPerYearComponent,

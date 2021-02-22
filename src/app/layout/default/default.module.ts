@@ -37,6 +37,7 @@ import { CustomerInfoPerMonthComponent } from 'src/app/modules/requests/componen
 import { SammuryService } from 'src/app/modules/requests/service/sammury.service';
 import { NodeTicketsService } from 'src/app/modules/requests/service/node-tickets.service';
 import { NodeTicketComponent } from 'src/app/modules/requests/component/node-ticket/node-ticket.component';
+import { AllCustomerComponent } from 'src/app/modules/requests/component/all-customer/all-customer.component';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -56,6 +57,7 @@ import { NodeTicketComponent } from 'src/app/modules/requests/component/node-tic
   CustomerInfoPerYearComponent,
   CustomerInfoPerMonthComponent,
   NodeTicketComponent,
+  AllCustomerComponent,
 
 
     

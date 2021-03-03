@@ -38,6 +38,7 @@ import { SammuryService } from 'src/app/modules/requests/service/sammury.service
 import { NodeTicketsService } from 'src/app/modules/requests/service/node-tickets.service';
 import { NodeTicketComponent } from 'src/app/modules/requests/component/node-ticket/node-ticket.component';
 import { AllCustomerComponent } from 'src/app/modules/requests/component/all-customer/all-customer.component';
+import { CallSupportCenterService } from 'src/app/modules/requests/service/call-support-center.service';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -80,7 +81,7 @@ import { AllCustomerComponent } from 'src/app/modules/requests/component/all-cus
   ],
   providers:[
     EmpService,RequestService,SafeService,WarningService,VaiolateService
-   ,SafecustomerService,Title,CountNodeService,SammuryService,NodeTicketsService,CustomerinfoPerYearService],
+   ,SafecustomerService,Title,CountNodeService,SammuryService,NodeTicketsService,CustomerinfoPerYearService,CallSupportCenterService],
   entryComponents:[MatConfirmDialogComponent]
 
 

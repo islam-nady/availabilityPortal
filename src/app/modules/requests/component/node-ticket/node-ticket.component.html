@@ -22,7 +22,12 @@
  <label>Account Number: </label><p>{{acccountNumber}}</p>
 <hr>
  <label>Node Availability:</label> <p>{{nodeAvailability|number:'2.0-2'}}</p> 
- <br>
+ <hr>
+ <label>Sum TTR:</label> <p>{{sumTTR|number:'.0-2'}}</p> 
+ <hr>
+ <label>Count Ticket:</label> <p>{{countTicket}}</p> 
+ <hr>
+ <label>MTTR:</label> <p>{{MTTR|number:'.0-2'}}</p> <br>
  <br>
 </mat-card>
 <mat-divider></mat-divider>
@@ -56,6 +61,40 @@
     <ng-container matColumnDef="category">
         <mat-header-cell *matHeaderCellDef mat-sort-header><b> Category</b> </mat-header-cell>
         <mat-cell *matCellDef="let element" data-label="category"> {{element.category}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="subCategory">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b>Sub Category</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="subCategory"> {{element.subCategory}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="psdTicketNumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> PSD Ticket Number</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="psdTicketNumber"> {{element.psdTicketNumber}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="orderId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> Order Id</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="orderId"> {{element.orderId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="item">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> Item</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="item"> {{element.item}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="resolveDateTime">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> Resolve Date Time</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="resolveDateTime"> {{element.resolveDateTime}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="completeDateTime">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> Complete Date Time</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="completeDateTime"> {{element.completeDateTime}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="psdRootCause">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> PSD Root Cause</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="psdRootCause"> {{element.psdRootCause}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="psdRemedyAction">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> PSD Remedy Action</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="psdRemedyAction"> {{element.psdRemedyAction}} </mat-cell>
     </ng-container>
 
 

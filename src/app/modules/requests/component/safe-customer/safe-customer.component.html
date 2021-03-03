@@ -9,7 +9,17 @@
 <mat-card class="example-card">
     <mat-card-header>
         <mat-card-title>
-            Customer Node
+            Customer Nodes
+              <button mat-button (click)="accountNode(name,'safe')">
+                <mat-icon class="text-success">security</mat-icon> Safe
+            </button>  
+         <button mat-button (click)="accountNode(name,'warning')">
+                <mat-icon class="text-warning">warning</mat-icon> Warning
+            </button> 
+            <button mat-button (click)="accountNode(name,'vaiolate')">
+                <mat-icon style="color: red;">transfer_within_a_station</mat-icon> Vaiolate
+            </button>     
+          
         </mat-card-title>
     </mat-card-header>
     <mat-divider></mat-divider>

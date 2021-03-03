@@ -27,10 +27,14 @@ export class NodeTicketComponent implements OnInit {
 
   @ViewChild(MatSort) sort?:MatSort ;
   @ViewChild(MatPaginator) paginator?:MatPaginator ;
-  displayedColumns: string[] = ['subject','category', 'request_Status','nodeID','ttr'];
+ 
+  
+  displayedColumns: string[] = ['subject','category', 'subCategory','psdTicketNumber','orderId','item','resolveDateTime','completeDateTime','psdRootCause','psdRemedyAction','request_Status','nodeID','ttr'];
   dataSource=new MatTableDataSource(this.nodeDetails.requests);
  
   sumTTR:number=0;
+  countTicket:number=0;
+  MTTR:number=0;
   nodeId:string="";
   nodeAvailability:number=0;
   acccountName:string="";
@@ -114,8 +118,11 @@ barChartDataAvailability: ChartDataSets[] = [
       this.dataSource.paginator=this.paginator as MatPaginator;
      this.nodeDetails.requests.forEach(element => {
        this.sumTTR+=element.ttr;
+       this.countTicket+=1;
+
        
      });
+     this.MTTR=this.sumTTR/this.countTicket;
 
      
      this.nodeAvailability=res.availabilityNode;

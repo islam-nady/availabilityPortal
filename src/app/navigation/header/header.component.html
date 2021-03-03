@@ -28,11 +28,15 @@
                 </mat-menu>
             </li> -->
 
-
+            <select [(ngModel)]="dropdownsearch">
+                <option  value="nodeId" selected="selected">Node Id</option>
+                <option value="accountName">Account Name</option>
+                <option value="accountNumber">Account Number</option>
+                </select>
 
             
             <input type="search" id="site-search" name="Search"
-                   placeholder="Search with Node Id" (keyup.enter)="NodeTicket($event)">
+                   placeholder="Search " (keyup.enter)="NodeTicket($event)">
             
             
 

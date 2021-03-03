@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { CallSupportCenterService } from 'src/app/modules/requests/service/call-support-center.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,8 @@ export class HeaderComponent implements OnInit {
   @Output() public sidenavToggle = new EventEmitter();
    userName = localStorage.getItem('userName');
    nodeId:any;
-  constructor(private router :Router) { 
+   dropdownsearch:string="";
+  constructor(private router :Router,private callSupport:CallSupportCenterService) { 
     
     
      
@@ -20,6 +22,11 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+ setInterval(() => {
+   //console.log("hello")
+  this.callSupport.getTicketFromSupport();
+   }, 600000);
   }
   logOut(){
     localStorage.clear();
@@ -30,12 +37,29 @@ export class HeaderComponent implements OnInit {
   NodeTicket(event: any){
   
     this.nodeId = event.target.value;
-    console.log(this.nodeId);
-    
-    this.router.navigate(['/nodeticket'],{queryParams:{node:this.nodeId}})
+   // this.router.navigate(['/nodeticket'],{queryParams:{node:this.nodeId}})
+if(this.dropdownsearch=="nodeId")
+{
+  this.router.navigate(['/nodeticket'],{queryParams:{node:this.nodeId}})
+}
+else if(this.dropdownsearch=="accountName")
+{
+  this.router.navigate(['/safeCustomer'],{queryParams:{account:this.nodeId,kind:"vaiolate"}})
+
+}
+else if(this.dropdownsearch=="accountNumber")
+{
+  
+  
+//console.log(this.dropdownsearch+"in header");
+  this.router.navigate(['/safeCustomer'],{queryParams:{accountNumber:this.nodeId,kind:"vaiolate"}})
+
+}
 
   }
 
+
+  
   
   // NodeTicket(nodeId:string){
   //   console.log(nodeId);

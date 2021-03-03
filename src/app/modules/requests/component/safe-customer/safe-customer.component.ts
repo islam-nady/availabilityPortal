@@ -11,7 +11,7 @@ import { SafecustomerService } from '../../service/safecustomer.service';
 
 @Component({
   selector: 'app-safe-customer',
-  templateUrl: './safe-customer.component.html',
+  templateUrl:'./safe-customer.component.html',
   styleUrls: ['./safe-customer.component.css']
 })
 export class SafeCustomerComponent implements OnInit {
@@ -27,7 +27,8 @@ export class SafeCustomerComponent implements OnInit {
  
   
   kind:string="";
-  name:string="";
+  name:string=" ";
+  accountNumber:string=" ";
   constructor(private safecustomerService: SafecustomerService ,
     private dialog: MatDialog,
     private dialogService:DialogService 
@@ -40,16 +41,24 @@ export class SafeCustomerComponent implements OnInit {
       }
      
   ngOnInit(): void {
-   
-   
-    if(this._activatedRoute.snapshot.queryParams.account){
+    
+  
+    this.kind=this._activatedRoute.snapshot.queryParams.kind;
+    if(this._activatedRoute.snapshot.queryParams.account)
+    {
       this.name = this._activatedRoute.snapshot.queryParams.account;
-      this.kind=this._activatedRoute.snapshot.queryParams.kind;
+      
 // console.log(this.name);
 // console.log(this.kind);
 
     }
-    this.safecustomerService.getRequests(this.name,this.kind).subscribe(res=>{
+    if(this._activatedRoute.snapshot.queryParams.accountNumber)
+    {
+      this.accountNumber=this._activatedRoute.snapshot.queryParams.accountNumber;
+    //  console.log(this.accountNumber+"in customersafe component 1");
+    }
+
+    this.safecustomerService.getRequests(this.name,this.accountNumber,this.kind).subscribe(res=>{
       this.nodeAvailability = res as INodeAvailability[];
      /// console.log(res);
       this.dataSource=new MatTableDataSource(this.nodeAvailability);
@@ -64,8 +73,20 @@ export class SafeCustomerComponent implements OnInit {
     
   }
  
+  accountNode(accountName:string,state:string)
+  {
+   
+    this.safecustomerService.getRequests(accountName,this.accountNumber,state).subscribe(res=>{
+      this.nodeAvailability = res as INodeAvailability[];
+     /// console.log(res);
+      this.dataSource=new MatTableDataSource(this.nodeAvailability);
+      this.dataSource.paginator=this.paginator as MatPaginator;
+    });
+  }
+ 
 
 
+  
   NodeTicket(nodeId:string){
     console.log(nodeId);
    
@@ -76,7 +97,7 @@ export class SafeCustomerComponent implements OnInit {
 
 
   
-
+ 
 
   ngAfterViewInit() { 
   

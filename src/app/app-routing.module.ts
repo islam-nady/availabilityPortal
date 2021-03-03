@@ -44,11 +44,11 @@ const routes: Routes = [
       canActivate:[AuthGuardService]
     },
 
-    {
-      path:'safe',
-      component:SafeComponent,
-      canActivate:[AuthGuardService]
-    },
+    // {
+    //   path:'safe',
+    //   component:SafeComponent,
+    //   canActivate:[AuthGuardService]
+    // },
     {
       path:'countnode',
       component:CountNodeComponent,
@@ -70,16 +70,16 @@ const routes: Routes = [
       component:CustomerInfoPerMonthComponent,
       canActivate:[AuthGuardService]
     },
-    {
-      path:'warning',
-      component:WarningComponent,
-      canActivate:[AuthGuardService]
-    },
-    {
-      path:'vaiolate',
-      component:VaiolataComponent,
-      canActivate:[AuthGuardService]
-    },
+    // {
+    //   path:'warning',
+    //   component:WarningComponent,
+    //   canActivate:[AuthGuardService]
+    // },
+    // {
+    //   path:'vaiolate',
+    //   component:VaiolataComponent,
+    //   canActivate:[AuthGuardService]
+    // },
     {
       path:'safeCustomer',
       component:SafeCustomerComponent,

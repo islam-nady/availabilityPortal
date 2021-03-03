@@ -12,6 +12,13 @@ export interface IRequest{
     creationDateTime :Date;
     completeDateTime :Date;
     resolveDateTime :Date;
+    orderId :number;
+    psdTicketNumber:number;
+    subCategory :string;
+    item :string;
+    psdRootCause:string;
+    psdRemedyAction :string;
+
 
 
 }

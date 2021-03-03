@@ -57,8 +57,7 @@ export class AllCustomerComponent implements OnInit {
     
   }
   accountNode(accountName:string,state:string){
-    // console.log(accountName);
-    // console.log(state);
+   
     this.router.navigate(['/safeCustomer'],{queryParams:{account:accountName,kind:state}})
 
   }

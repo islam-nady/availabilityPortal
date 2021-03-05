@@ -28,6 +28,9 @@ button,[mat-icon-button]{
   border-collapse: collapse;
  
 }
+.mat-table .mat-icon.info{
+color:lightskyblue !important
+}
 
 mat-footer-row mat-footer-cell{
     justify-content: center;
@@ -360,4 +363,7 @@ mat-row, mat-header-row, mat-footer-row, th.mat-header-cell, td.mat-cell, td.mat
 .mat-header-cell{
   font-size: 15px;
   font-weight: 400;
+}
+.mat-drawer-inner-container{
+  overflow-x:hidden !important ;
 }

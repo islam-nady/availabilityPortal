@@ -25,7 +25,7 @@ mat-cell:first-of-type, mat-header-cell:first-of-type{
   mat-cell, mat-header-cell{
     word-wrap: break-word !important;
     white-space: unset !important;
-    flex: 0 0 17% !important;
+    /* flex: 0 0 17% !important; */
     width: 17%;
     overflow-wrap: break-word;
     word-wrap: break-word;

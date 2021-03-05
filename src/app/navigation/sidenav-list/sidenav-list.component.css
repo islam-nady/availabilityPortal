@@ -66,4 +66,6 @@
     border-right: 5px solid rgb(219, 223, 226);
   }
   
- 
+  .mat-drawer-inner-container{
+    overflow-x:hidden !important ;
+  }

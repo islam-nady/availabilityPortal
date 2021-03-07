@@ -12,7 +12,7 @@
         </mat-card-title>
     </mat-card-header>
  <mat-divider></mat-divider>
- <br>
+ <!-- <br>
  <br>
 
  <label>Node Id : </label><p>{{nodeId}}</p>
@@ -29,6 +29,36 @@
  <hr>
  <label>MTTR:</label> <p>{{MTTR|number:'.0-2'}}</p> <br>
  <br>
+
+
+ -->
+
+
+
+ <table id="NodeInfo">
+    <tr>
+      <th>Node Id</th>
+      <th>Account Name</th>
+      <th>Account Number</th>
+      <th>Node Availability</th>
+      <th>SumTTR</th>
+      <th>Count Ticket</th>
+      <th>MTTR</th>
+    </tr>
+    <tr>
+      <td>{{nodeId}}</td>
+      <td>{{acccountName}}</td>
+      <td>{{acccountNumber}}</td>
+      <td>{{nodeAvailability|number:'2.0-2'}}</td>
+      <td>{{sumTTR|number:'.0-2'}}</td>
+      <td>{{countTicket}}</td>
+      <td>{{MTTR|number:'.0-2'}}</td>
+    </tr>
+  
+  </table>
+  
+
+
 </mat-card>
 <mat-divider></mat-divider>
 

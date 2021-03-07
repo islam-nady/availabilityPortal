@@ -53,3 +53,6 @@
     padding-right: 15px !important;
     padding-left: 0 !important;
   }
+  .mat-table .mat-icon {
+    color: lightskyblue !important;
+}

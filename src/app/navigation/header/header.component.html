@@ -6,7 +6,7 @@
     </div>
     <div>
        
-        <a routerLink="#" style="font-family: 'Pirata One', cursive;font-size:27px;color:#d0d0d0;text-shadow: 1px 1px 10px #fff;"><img src="../../../assets/image/telecome.png" height="48" width="34"/>Availability Portal</a>
+        <a routerLink="#" style="font-family: 'Pirata One', cursive;font-size:27px;color:#d0d0d0;"><img src="../../../assets/image/telecome.png" height="48" width="34"/>Availability Portal</a>
     </div>
    
    
@@ -28,7 +28,8 @@
                 </mat-menu>
             </li> -->
 
-            <select [(ngModel)]="dropdownsearch">
+            <select id="select" [(ngModel)]="dropdownsearch">
+               
                 <option  value="nodeId" selected="selected">Node Id</option>
                 <option value="accountName">Account Name</option>
                 <option value="accountNumber">Account Number</option>
@@ -43,7 +44,7 @@
 
             <li>
                 <button mat-button [matMenuTriggerFor]="menu">
-                    <span style="font-family: 'Pirata One', cursive;font-size: 18px;">{{userName}}</span>
+                    <span style="font-size: 16px;">{{userName}}</span>
                     <mat-icon> person_outline </mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">

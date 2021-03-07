@@ -28,10 +28,10 @@ export class NodeTicketComponent implements OnInit {
   @ViewChild(MatSort) sort?:MatSort ;
   @ViewChild(MatPaginator) paginator?:MatPaginator ;
  
-  
+ 
   displayedColumns: string[] = ['subject','category', 'subCategory','psdTicketNumber','orderId','item','resolveDateTime','completeDateTime','psdRootCause','psdRemedyAction','request_Status','nodeID','ttr'];
   dataSource=new MatTableDataSource(this.nodeDetails.requests);
- 
+
   sumTTR:number=0;
   countTicket:number=0;
   MTTR:number=0;

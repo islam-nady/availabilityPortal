@@ -19,7 +19,7 @@
   min-width: 250px !important;
   } 
   .mat-list-base .mat-list-item {
-    font-family: 'Aclonica', sans-serif !important;
+    /* font-family: 'Aclonica', sans-serif !important; */
     font-size: 14px;
     color:#fff !important;
   }

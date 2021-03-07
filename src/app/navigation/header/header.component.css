@@ -57,7 +57,7 @@ span{
 *, ::after, ::before {
     box-sizing: border-box;
 }
-#site-search{
+#site-search,#select{
 font-size: 13px;
 
 background: #eee;
@@ -65,10 +65,19 @@ border-radius: 20px;
 padding-left: 15px;
 outline: none;
 }
-#site-search:focus{
+#site-search:focus,#select:focus{
     outline: none;
 }
+#select option{
+    background-color:#eee !important;
+    padding: 10px !important;
+    border-bottom: 1px solid #7d133a !important;
 
+}
+#select option:hover{
+    background-color:#7d133a !important; 
+    color: #fff !important;
+}
 
 
 

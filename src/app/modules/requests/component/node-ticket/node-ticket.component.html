@@ -1,5 +1,7 @@
 <div class="search-div" fxLayout="row">
     <mat-list-item class="header-tag" routerLink="/" > Home </mat-list-item>/
+    <mat-list-item class="header-tag" routerLink="/allCustomer" >ALL Customer  </mat-list-item>/
+    <mat-list-item class="header-tag" (click)="accountNode()" > {{acccountName}}  </mat-list-item>/
    
     <mat-list-item class="header-tag active" routerLink="#">  NodeTicket </mat-list-item>
 
@@ -109,6 +111,12 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header><b> Item</b> </mat-header-cell>
         <mat-cell *matCellDef="let element" data-label="item"> {{element.item}} </mat-cell>
     </ng-container>
+
+    <ng-container matColumnDef="creationDateTime">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> Creation Date Time</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="creationDateTime"> {{element.creationDateTime}} </mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="resolveDateTime">
         <mat-header-cell *matHeaderCellDef mat-sort-header><b> Resolve Date Time</b> </mat-header-cell>
         <mat-cell *matCellDef="let element" data-label="resolveDateTime"> {{element.resolveDateTime}} </mat-cell>

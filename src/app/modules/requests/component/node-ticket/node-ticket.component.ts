@@ -29,13 +29,14 @@ export class NodeTicketComponent implements OnInit {
   @ViewChild(MatPaginator) paginator?:MatPaginator ;
  
  
-  displayedColumns: string[] = ['subject','category', 'subCategory','psdTicketNumber','orderId','item','resolveDateTime','completeDateTime','psdRootCause','psdRemedyAction','request_Status','nodeID','ttr'];
+  displayedColumns: string[] = ['subject','category', 'subCategory','psdTicketNumber','orderId','item','creationDateTime','resolveDateTime','completeDateTime','psdRootCause','psdRemedyAction','request_Status','nodeID','ttr'];
   dataSource=new MatTableDataSource(this.nodeDetails.requests);
 
   sumTTR:number=0;
   countTicket:number=0;
   MTTR:number=0;
-  nodeId:string="";
+  orderId:number=0;
+  nodeId:string=" ";
   nodeAvailability:number=0;
   acccountName:string="";
   acccountNumber:string="";
@@ -91,43 +92,48 @@ barChartDataAvailability: ChartDataSets[] = [
 
 
   constructor(private nodeTicketService: NodeTicketsService ,
-    private dialog: MatDialog,
-    private dialogService:DialogService 
-    ,private router: Router,private _activatedRoute: ActivatedRoute,private titleService:Title)
+  private dialog: MatDialog,
+  private dialogService:DialogService 
+ ,private router: Router,private _activatedRoute: ActivatedRoute,private titleService:Title)
      {
-     
+  
+      
       this.titleService.setTitle("NodeTicket"); 
-     
+      
+ //end of constructor 
 
       }
      
   ngOnInit(): void {
-   
+  
    
     if(this._activatedRoute.snapshot.queryParams.node){
       this.nodeId = this._activatedRoute.snapshot.queryParams.node;
-    //  this.nodeAvailability = this._activatedRoute.snapshot.queryParams.availabilityPercent;
-    
-//      console.log(this.nodeAvailability);
-
+   
     }
-    this.nodeTicketService.getRequests(this.nodeId).subscribe(res=>{
+    if(this._activatedRoute.snapshot.queryParams.orderId){
+      this.orderId = this._activatedRoute.snapshot.queryParams.orderId;
+   
+    }
+    this.nodeTicketService.getRequests(this.nodeId,this.orderId).subscribe(res=>{
       this.nodeDetails = res as INodeDetails ;
-     
+      //console.log(this.nodeDetails);
       this.dataSource=new MatTableDataSource(this.nodeDetails.requests);
       this.dataSource.paginator=this.paginator as MatPaginator;
-     this.nodeDetails.requests.forEach(element => {
-       this.sumTTR+=element.ttr;
-       this.countTicket+=1;
+      this.nodeDetails.requests.forEach(element => {
+      this.sumTTR+=element.ttr;
+      this.countTicket+=1;
 
        
      });
-     this.MTTR=this.sumTTR/this.countTicket;
+
+    this.MTTR=this.sumTTR/this.countTicket;
 
      
-     this.nodeAvailability=res.availabilityNode;
-      this.acccountName=res.accountName;
-      this.acccountNumber=res.accountNumber;
+    this.nodeAvailability=res.availabilityNode;
+     
+    this.acccountName=res.accountName;
+    this.acccountNumber=res.accountNumber;
   this.barChartData= [
     { data: [this.sumTTR], label: 'Sum TTR For Ticket Per Node' }
   ];
@@ -141,7 +147,6 @@ barChartDataAvailability: ChartDataSets[] = [
     });
      
    
-  
     
   }
  
@@ -153,10 +158,14 @@ barChartDataAvailability: ChartDataSets[] = [
   
 
 
+  accountNode(){
+ 
+    this.router.navigate(['/safeCustomer'],{queryParams:{account:this.acccountName,kind:"vaiolate"}})
 
+  }
   
 
-
+//
   ngAfterViewInit() { 
   
     this.dataSource.sort = this.sort as MatSort;

@@ -12,7 +12,10 @@ export class NodeTicketsService {
   url =  "http://172.29.29.8:8014/api/customer/nodedetails";
    constructor(private http: HttpClient) { }
 
-   getRequests(nodeId:string): Observable<INodeDetails>{
-     return this.http.get<INodeDetails>(`${this.url}/`+nodeId);
+   getRequests(nodeId:string,orderId:number): Observable<INodeDetails>{
+     
+     
+     debugger;
+     return this.http.get<INodeDetails>(`${this.url}/`+nodeId+'/'+orderId);
    }
 }

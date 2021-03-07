@@ -49,11 +49,11 @@ else if(this.dropdownsearch=="accountName")
 }
 else if(this.dropdownsearch=="accountNumber")
 {
-  
-  
-//console.log(this.dropdownsearch+"in header");
   this.router.navigate(['/safeCustomer'],{queryParams:{accountNumber:this.nodeId,kind:"vaiolate"}})
-
+}
+else if(this.dropdownsearch=="orderId")
+{
+  this.router.navigate(['/nodeticket'],{queryParams:{orderId:this.nodeId}})
 }
 
   }

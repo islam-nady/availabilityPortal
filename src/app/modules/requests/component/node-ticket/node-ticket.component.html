@@ -66,15 +66,15 @@
 
 
 <mat-card class="example-card">
-    <mat-card-header>
+     <mat-card-header>
         <mat-card-title>
            NodeTicket
         </mat-card-title>
     </mat-card-header>
-    <mat-divider></mat-divider>
+    <mat-divider></mat-divider> 
 
  <div class="search-div">
-
+   
     <mat-form-field class="search-form-field" floatLabel="never">
         <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()"> 
        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
@@ -84,6 +84,10 @@
 </div>
 <div class="example-container mat-elevation-z8">
 <mat-table [dataSource]="dataSource" matSort >
+    <ng-container matColumnDef="request_ID">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b>PSC Ticket Number </b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="request_ID"> {{element.request_ID}} </mat-cell>
+    </ng-container>
 
     <ng-container matColumnDef="subject">
         <mat-header-cell *matHeaderCellDef mat-sort-header><b>Subject</b> </mat-header-cell>
@@ -114,16 +118,16 @@
 
     <ng-container matColumnDef="creationDateTime">
         <mat-header-cell *matHeaderCellDef mat-sort-header><b> Creation Date Time</b> </mat-header-cell>
-        <mat-cell *matCellDef="let element" data-label="creationDateTime"> {{element.creationDateTime}} </mat-cell>
+        <mat-cell *matCellDef="let element" data-label="creationDateTime"> {{element.creationDateTime| date:'medium'}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="resolveDateTime">
         <mat-header-cell *matHeaderCellDef mat-sort-header><b> Resolve Date Time</b> </mat-header-cell>
-        <mat-cell *matCellDef="let element" data-label="resolveDateTime"> {{element.resolveDateTime}} </mat-cell>
+        <mat-cell *matCellDef="let element" data-label="resolveDateTime"> {{element.resolveDateTime| date:'medium'}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="completeDateTime">
         <mat-header-cell *matHeaderCellDef mat-sort-header><b> Complete Date Time</b> </mat-header-cell>
-        <mat-cell *matCellDef="let element" data-label="completeDateTime"> {{element.completeDateTime}} </mat-cell>
+        <mat-cell *matCellDef="let element" data-label="completeDateTime"> {{element.completeDateTime| date:'medium'}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="psdRootCause">

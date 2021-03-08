@@ -25,8 +25,26 @@ export class DashboardComponent implements OnInit {
      [this.warnning, this.vaiolate, this.safe]
    ];
    doughnutChartType: ChartType = 'doughnut';
+
    
+/////////bar chart/////////////////////////
+barChartOptions: ChartOptions = {
+  responsive: true,
+};
+barChartLabels: Label[] =['warnning', 'vaiolate', 'safe'];
+barChartType: ChartType = 'bar';
+barChartLegend = true;
+barChartPlugins = [];
+barChartData: ChartDataSets[] = [
+  { data:[this.warnning, this.vaiolate, this.safe], label: 'Node Availability' }
+];
+
+
+
+
+
    
+
   constructor(private titleService :Title,private dialog: MatDialog,
     private dialogService:DialogService ,private sammuryService:SammuryService )
     {
@@ -45,6 +63,10 @@ export class DashboardComponent implements OnInit {
       [this.warnning, this.vaiolate, this.safe]
     ];
 
+     this.barChartData = [
+      { data:[this.warnning, this.vaiolate, this.safe], label: 'Node Availability' }
+    ];    
+    
     });
    
  
@@ -103,17 +125,17 @@ lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'Jun
 
 
 /////////bar chart/////////////////////////
-barChartOptions: ChartOptions = {
-  responsive: true,
-};
-barChartLabels: Label[] = ['Apple', 'Banana', 'Kiwifruit', 'Blueberry', 'Orange', 'Grapes'];
-barChartType: ChartType = 'bar';
-barChartLegend = true;
-barChartPlugins = [];
+// barChartOptions: ChartOptions = {
+//   responsive: true,
+// };
+// barChartLabels: Label[] = ['Apple', 'Banana', 'Kiwifruit', 'Blueberry', 'Orange', 'Grapes'];
+// barChartType: ChartType = 'bar';
+// barChartLegend = true;
+// barChartPlugins = [];
 
-barChartData: ChartDataSets[] = [
-  { data: [45, 37, 60, 70, 46, 33], label: 'Best Fruits' }
-];
+// barChartData: ChartDataSets[] = [
+//   { data: [45, 37, 60, 70, 46, 33], label: 'Best Fruits' }
+// ];
 
 
   

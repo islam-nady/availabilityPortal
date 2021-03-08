@@ -29,7 +29,7 @@ export class RequestComponent implements OnInit {
   @ViewChild(MatPaginator) paginator?:MatPaginator ;
   displayedColumns: string[] = ['nodeID',  'availability'];
   dataSource=new MatTableDataSource(this.nodeAvailability);
- 
+
   
   kind:string="vaiolate";
   constructor(private requestService: RequestService ,
@@ -55,8 +55,7 @@ export class RequestComponent implements OnInit {
       //console.log(res);
       this.dataSource=new MatTableDataSource(this.nodeAvailability);
       this.dataSource.paginator=this.paginator as MatPaginator;
-     
-     
+      this.dataSource.sort = this.sort as MatSort;
       
     });
      

@@ -47,6 +47,7 @@ export class VaiolataComponent implements OnInit {
      
       this.dataSource=new MatTableDataSource(this.customer);
       this.dataSource.paginator=this.paginator as MatPaginator;
+      this.dataSource.sort = this.sort as MatSort;
       
     });
      

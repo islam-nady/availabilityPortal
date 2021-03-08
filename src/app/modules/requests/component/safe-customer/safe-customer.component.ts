@@ -42,7 +42,7 @@ export class SafeCustomerComponent implements OnInit {
      
   ngOnInit(): void {
     
-  
+    //this.dataSource.sort = this.sort as MatSort;
     this.kind=this._activatedRoute.snapshot.queryParams.kind;
     if(this._activatedRoute.snapshot.queryParams.account)
     {
@@ -60,12 +60,12 @@ export class SafeCustomerComponent implements OnInit {
 
     this.safecustomerService.getRequests(this.name,this.accountNumber,this.kind).subscribe(res=>{
       this.nodeAvailability = res as INodeAvailability[];
-     /// console.log(res);
+    
       this.dataSource=new MatTableDataSource(this.nodeAvailability);
       this.dataSource.paginator=this.paginator as MatPaginator;
-      
-     
-      
+    
+      this.dataSource.sort = this.sort as MatSort;
+   
     });
      
    
@@ -81,6 +81,8 @@ export class SafeCustomerComponent implements OnInit {
      /// console.log(res);
       this.dataSource=new MatTableDataSource(this.nodeAvailability);
       this.dataSource.paginator=this.paginator as MatPaginator;
+      this.dataSource.sort = this.sort as MatSort;
+      
     });
   }
  
@@ -101,6 +103,7 @@ export class SafeCustomerComponent implements OnInit {
 
   ngAfterViewInit() { 
   
+    
     this.dataSource.sort = this.sort as MatSort;
     this.dataSource.paginator = this.paginator as MatPaginator;
   }

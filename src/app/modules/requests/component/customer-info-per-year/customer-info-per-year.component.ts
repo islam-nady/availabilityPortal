@@ -52,7 +52,7 @@ export class CustomerInfoPerYearComponent implements OnInit {
       //console.log(res);
       this.dataSource=new MatTableDataSource(this.customerinfo);
       this.dataSource.paginator=this.paginator as MatPaginator;
-     
+      this.dataSource.sort = this.sort as MatSort;
      
       
     });

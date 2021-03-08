@@ -49,10 +49,12 @@ export class AllCustomerComponent implements OnInit {
      
       this.dataSource=new MatTableDataSource(this.customer);
       this.dataSource.paginator=this.paginator as MatPaginator;
+      this.dataSource.sort = this.sort as MatSort;
       
     });
      
    
+    
   
     
   }
@@ -75,7 +77,8 @@ export class AllCustomerComponent implements OnInit {
   ngAfterViewInit() { 
   
     this.dataSource.sort = this.sort as MatSort;
-    this.dataSource.paginator = this.paginator as MatPaginator;}
+    this.dataSource.paginator = this.paginator as MatPaginator; 
+  }
 
     onSearchClear(){
       this.searchKey ='';

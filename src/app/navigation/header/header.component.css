@@ -57,6 +57,9 @@ span{
 *, ::after, ::before {
     box-sizing: border-box;
 }
+/* .mat-form-field-wrapper{
+    height: 10px;
+} */
 #site-search,#select{
 font-size: 13px;
 
@@ -68,13 +71,13 @@ outline: none;
 #site-search:focus,#select:focus{
     outline: none;
 }
-#select option{
+#select .mat-option{
     background-color:#eee !important;
     padding: 10px !important;
     border-bottom: 1px solid #7d133a !important;
 
 }
-#select option:hover{
+#select .mat-option:hover{
     background-color:#7d133a !important; 
     color: #fff !important;
 }

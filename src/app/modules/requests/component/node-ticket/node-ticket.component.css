@@ -29,8 +29,8 @@ p{
 mat-cell, mat-header-cell{
     word-wrap: break-word !important;
     white-space: unset !important;
-    flex: 0 0 30% !important;
-    width: 30% ;
+    flex: 0 0 18% !important;
+    width: 18% ;
     overflow-wrap: break-word;
     word-wrap: break-word;
   
@@ -42,23 +42,14 @@ mat-cell, mat-header-cell{
     hyphens: auto;
     border-bottom:1px solid #ececec;
    }
-mat-cell:first-of-type, mat-header-cell:first-of-type{
+    mat-header-cell:first-of-type, mat-header-cell:nth-child(5), mat-header-cell:nth-child(8), mat-header-cell:nth-child(10), mat-header-cell:nth-child(12), mat-header-cell:nth-child(15){
+padding-left: 10px !important;
+   }
+ mat-cell:nth-child(2), mat-header-cell:nth-child(2){
     word-wrap: break-word !important;
     white-space: unset !important;
-    flex: 0 0 38% !important;
-    width: 38%;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    border-bottom: 1px solid #ececec;
-  }
-  mat-cell:nth-child(3), mat-header-cell:nth-child(3){
-    word-wrap: break-word !important;
-    white-space: unset !important;
-    flex: 0 0 38% !important;
-    width: 38%;
+    flex: 0 0 20% !important;
+    width: 20%;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
@@ -100,7 +91,7 @@ mat-cell:first-of-type, mat-header-cell:first-of-type{
     /* padding-top: 12px;
     padding-bottom: 12px; */
     text-align: left;
-    background-color: #636363;
+    background-color: #828282;
     color: white;
   }
  

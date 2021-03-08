@@ -15,6 +15,7 @@ button,[mat-icon-button]{
     display: block;
     width:100%;
  overflow: auto; 
+ margin-top: 20px;
  
 }
 .mat-table {
@@ -41,13 +42,13 @@ mat-footer-row mat-footer-cell{
 
     /* filter search controls */
 .search-div{
-    margin: 20px 10px;
+    margin: 0px !important;
     height:50px;
     text-align: end;
 } 
 
 .search-form-field{
-    width:30%;
+    width:100%;
     /* margin-left: 10px; */
     padding: 10px 10px;
     background-color: #f5f5f5;

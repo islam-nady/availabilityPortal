@@ -41,7 +41,7 @@ export class SafeComponent implements OnInit {
       }
      
   ngOnInit(): void {
-   
+    this.dataSource.sort = this.sort as MatSort;
    
    
     this.safeService.getRequests().subscribe(res=>{
@@ -49,6 +49,7 @@ export class SafeComponent implements OnInit {
      
       this.dataSource=new MatTableDataSource(this.customer);
       this.dataSource.paginator=this.paginator as MatPaginator;
+    
       
     });
      

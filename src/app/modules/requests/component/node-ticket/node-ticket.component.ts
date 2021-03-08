@@ -60,6 +60,12 @@ form: FormGroup = new FormGroup({
   // bar chart 
   barChartOptions: ChartOptions = {
     responsive: true,
+    scales: {
+      xAxes: [{
+        // Change here
+      // barPercentage:0.5
+    }]
+  }
   };
   barChartLabels: Label[] = [this.month];
   barChartType: ChartType = 'bar';
@@ -106,7 +112,8 @@ barChartDataAvailability: ChartDataSets[] = [
      
   ngOnInit(): void {
   
-   
+     
+    this.dataSource.sort = this.sort as MatSort;
     if(this._activatedRoute.snapshot.queryParams.node){
       this.nodeId = this._activatedRoute.snapshot.queryParams.node;
    
@@ -120,9 +127,12 @@ barChartDataAvailability: ChartDataSets[] = [
       //console.log(this.nodeDetails);
       this.dataSource=new MatTableDataSource(this.nodeDetails.requests);
       this.dataSource.paginator=this.paginator as MatPaginator;
+      this.dataSource.sort = this.sort as MatSort;
+      
       this.nodeDetails.requests.forEach(element => {
       this.sumTTR+=element.ttr;
       this.countTicket+=1;
+      
 
        
      });

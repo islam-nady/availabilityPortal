@@ -51,7 +51,7 @@ export class CountNodeComponent implements OnInit {
       this.dataSource=new MatTableDataSource(this.countNode);
       this.dataSource.paginator=this.paginator as MatPaginator;
      
-     
+      this.dataSource.sort = this.sort as MatSort;
       
     });
      

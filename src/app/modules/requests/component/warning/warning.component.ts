@@ -39,13 +39,14 @@ export class WarningComponent implements OnInit {
      
   ngOnInit(): void {
    
-   
+   // this.dataSource.sort = this.sort as MatSort;
    
     this.warningService.getcustomer().subscribe(res=>{
       this.customer = res as ICustomer[];
      
       this.dataSource=new MatTableDataSource(this.customer);
       this.dataSource.paginator=this.paginator as MatPaginator;
+     
       
     });
      

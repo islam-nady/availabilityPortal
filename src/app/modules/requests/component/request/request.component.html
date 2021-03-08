@@ -2,7 +2,7 @@
 <div class="search-div" fxLayout="row">
     <mat-list-item class="header-tag" routerLink="/" > Home </mat-list-item>/
    
-    <mat-list-item class="header-tag active" routerLink="#"> Top 50 Vaiolate</mat-list-item>
+    <mat-list-item class="header-tag active" routerLink="#"> Top 50 Violate</mat-list-item>
 
 </div>
 
@@ -10,7 +10,7 @@
 <mat-card class="example-card">
     <mat-card-header>
         <mat-card-title>
-            Top 50 Vaiolate
+            Top 50 Violate
         </mat-card-title>
     </mat-card-header>
     <mat-divider></mat-divider>
@@ -46,13 +46,13 @@
         </mat-footer-cell>
 
     </ng-container>
-  
-    <!-- <ng-container matColumnDef="noData">
+<!--   
+     <ng-container matColumnDef="noData">
         <td mat-footer-cell *matFooterCellDef colspan="6">
             No data
         </td>
 
-    </ng-container> -->
+    </ng-container>  -->
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row >
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row >
     <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':(dataSource.data.length!=0)}"></mat-footer-row>

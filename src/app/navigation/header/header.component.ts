@@ -24,9 +24,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
 
  setInterval(() => {
-   //console.log("hello")
-  this.callSupport.getTicketFromSupport();
-   }, 600000);
+   
+  this.callSupport.getTicketFromSupport().subscribe(res=>{
+    
+  });
+ 
+}, 300000);
   }
   logOut(){
     localStorage.clear();

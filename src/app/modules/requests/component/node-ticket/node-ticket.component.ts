@@ -29,7 +29,7 @@ export class NodeTicketComponent implements OnInit {
   @ViewChild(MatPaginator) paginator?:MatPaginator ;
  
  
-  displayedColumns: string[] = ['request_ID','subject','category', 'subCategory','psdTicketNumber','orderId','item','creationDateTime','resolveDateTime','completeDateTime','psdRootCause','psdRemedyAction','request_Status','nodeID','ttr'];
+  displayedColumns: string[] = ['request_ID','subject','category', 'subCategory','psdTicketNumber','orderId','item','creationDateTime','resolveDateTime','completeDateTime','psdRootCause','psdRemedyAction','request_Status','nodeID','ttrstring','action'];
   dataSource=new MatTableDataSource(this.nodeDetails.requests);
 
   sumTTR:number=0;
@@ -124,7 +124,38 @@ barChartDataAvailability: ChartDataSets[] = [
     }
     this.nodeTicketService.getRequests(this.nodeId,this.orderId).subscribe(res=>{
       this.nodeDetails = res as INodeDetails ;
-      //console.log(this.nodeDetails);
+      
+      this.nodeDetails.requests.forEach(element => {
+      let minut:Number;
+      let hour:Number;
+      let day:Number;
+        if(element.ttr<60)
+        {
+        minut=Math.floor(element.ttr) ;
+        element.ttrstring='m:'+minut ;
+        }
+        else if(element.ttr>=60)
+        {
+          hour=Math.floor(element.ttr/60);
+          minut=Math.floor(element.ttr%60);
+          if(hour<24)
+          {
+            element.ttrstring='h:'+hour+'m:'+minut;
+          }
+          else if(hour>=24)
+          {
+            day=Math.floor(element.ttr/(60*24));
+            hour=Math.floor((element.ttr/60)%24);
+            element.ttrstring='d:'+day+'h:'+hour+'m:'+minut;
+          }
+        }
+        this.countTicket+=1;
+        
+  
+         
+       });
+  
+      console.log(this.nodeDetails.requests);
       this.dataSource=new MatTableDataSource(this.nodeDetails.requests);
       this.dataSource.paginator=this.paginator as MatPaginator;
       this.dataSource.sort = this.sort as MatSort;

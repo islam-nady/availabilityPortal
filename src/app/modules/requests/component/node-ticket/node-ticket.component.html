@@ -151,12 +151,21 @@
         <mat-cell *matCellDef="let element" data-label="nodeID"> {{element.nodeID}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="ttr">
-        <mat-header-cell *matHeaderCellDef mat-sort-header><b> TTR With Minuts</b> </mat-header-cell>
-        <mat-cell *matCellDef="let element" data-label="ttr"> {{element.ttr|number:'.0-0'}} </mat-cell>
+    <ng-container matColumnDef="ttrstring">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> TTR </b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="ttrstring"> {{element.ttrstring}} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef mat-sort-header><b> Action </b> </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="action">
+         
+         <a href='http://psc.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID=element.nodeID' target="_blank">Open PSC</a>
+        </mat-cell>
 
+    </ng-container>
+
+    <!-- |number:'.0-0'-->
     <ng-container matColumnDef="loading">
         <mat-footer-cell *matFooterCellDef colspan="6">
             <div class="spinner">

@@ -39,6 +39,12 @@ import { NodeTicketsService } from 'src/app/modules/requests/service/node-ticket
 import { NodeTicketComponent } from 'src/app/modules/requests/component/node-ticket/node-ticket.component';
 import { AllCustomerComponent } from 'src/app/modules/requests/component/all-customer/all-customer.component';
 import { CallSupportCenterService } from 'src/app/modules/requests/service/call-support-center.service';
+import { SafeNodesOfMonthComponent } from 'src/app/modules/requests/component/safe-nodes-of-month/safe-nodes-of-month.component';
+import { safeNodesOfMonthService } from 'src/app/modules/requests/service/safe-nodes-of-month.service';
+import { ViolatedNodesOfMonthService } from 'src/app/modules/requests/service/violated-nodes-of-month.service';
+import { WarningNodesOfMonthService } from 'src/app/modules/requests/service/warning-nodes-of-month.service';
+import { WarningNodesOfMonthComponent } from 'src/app/modules/requests/component/warning-nodes-of-month/warning-nodes-of-month.component';
+import { ViolatedNodesOfMonthComponent } from 'src/app/modules/requests/component/violated-nodes-of-month/violated-nodes-of-month.component';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -59,6 +65,9 @@ import { CallSupportCenterService } from 'src/app/modules/requests/service/call-
   CustomerInfoPerMonthComponent,
   NodeTicketComponent,
   AllCustomerComponent,
+  SafeNodesOfMonthComponent,
+  WarningNodesOfMonthComponent,
+  ViolatedNodesOfMonthComponent,
 
 
     
@@ -80,7 +89,7 @@ import { CallSupportCenterService } from 'src/app/modules/requests/service/call-
  
   ],
   providers:[
-    EmpService,RequestService,SafeService,WarningService,VaiolateService
+    EmpService,RequestService,SafeService,WarningService,VaiolateService,safeNodesOfMonthService,ViolatedNodesOfMonthService,WarningNodesOfMonthService
    ,SafecustomerService,Title,CountNodeService,SammuryService,NodeTicketsService,CustomerinfoPerYearService,CallSupportCenterService],
   entryComponents:[MatConfirmDialogComponent]
 

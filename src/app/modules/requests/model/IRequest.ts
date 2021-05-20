@@ -9,6 +9,7 @@ export interface IRequest{
     resolved_Date :number;
     nodeID :number;
     ttr :number;
+    ttrstring:string;
     creationDateTime :Date;
     completeDateTime :Date;
     resolveDateTime :Date;

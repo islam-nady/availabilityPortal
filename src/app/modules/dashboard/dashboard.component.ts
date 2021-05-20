@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   
   month=new Date().toLocaleDateString('default',{month:'long'});
   
-   doughnutChartLabels: Label[] = ['warnning', 'vaiolate', 'safe'];
+   doughnutChartLabels: Label[] = ['warning', 'violated', 'safe'];
    doughnutChartData: MultiDataSet = [
      [this.warnning, this.vaiolate, this.safe]
    ];
@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
 barChartOptions: ChartOptions = {
   responsive: true,
 };
-barChartLabels: Label[] =['warnning', 'vaiolate', 'safe'];
+barChartLabels: Label[] =['warning', 'violated', 'safe'];
 barChartType: ChartType = 'bar';
 barChartLegend = true;
 barChartPlugins = [];

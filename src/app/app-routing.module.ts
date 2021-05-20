@@ -14,8 +14,11 @@ import { CustomerInfoPerYearComponent } from './modules/requests/component/custo
 import { NodeTicketComponent } from './modules/requests/component/node-ticket/node-ticket.component';
 import { RequestComponent } from './modules/requests/component/request/request.component';
 import { SafeCustomerComponent } from './modules/requests/component/safe-customer/safe-customer.component';
+import { SafeNodesOfMonthComponent } from './modules/requests/component/safe-nodes-of-month/safe-nodes-of-month.component';
 import { SafeComponent } from './modules/requests/component/safe/safe.component';
 import { VaiolataComponent } from './modules/requests/component/vaiolata/vaiolata.component';
+import { ViolatedNodesOfMonthComponent } from './modules/requests/component/violated-nodes-of-month/violated-nodes-of-month.component';
+import { WarningNodesOfMonthComponent } from './modules/requests/component/warning-nodes-of-month/warning-nodes-of-month.component';
 import { WarningComponent } from './modules/requests/component/warning/warning.component';
 
 import {StepperComponent} from './modules/stepper/stepper.component';
@@ -83,6 +86,21 @@ const routes: Routes = [
     {
       path:'safeCustomer',
       component:SafeCustomerComponent,
+      canActivate:[AuthGuardService]
+    },
+    {
+      path:'safeNodes',
+      component:SafeNodesOfMonthComponent,
+      canActivate:[AuthGuardService]
+    },
+    {
+      path:'warningNodes',
+      component:WarningNodesOfMonthComponent,
+      canActivate:[AuthGuardService]
+    },
+    {
+      path:'violatedNodes',
+      component:ViolatedNodesOfMonthComponent,
       canActivate:[AuthGuardService]
     },
     {

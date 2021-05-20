@@ -160,7 +160,7 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header><b> Action </b> </mat-header-cell>
         <mat-cell *matCellDef="let element" data-label="action">
          
-         <a href='http://psc.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID=element.nodeID' target="_blank">Open PSC</a>
+         <a href="http://psc.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.request_ID}}"  target="_blank">Open PSC</a>
         </mat-cell>
 
     </ng-container>

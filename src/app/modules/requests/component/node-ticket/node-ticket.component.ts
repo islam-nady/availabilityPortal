@@ -132,7 +132,7 @@ barChartDataAvailability: ChartDataSets[] = [
         if(element.ttr<60)
         {
         minut=Math.floor(element.ttr) ;
-        element.ttrstring=minut+' m :' ;
+        element.ttrstring=minut+' m ' ;
         }
         else if(element.ttr>=60)
         {
@@ -140,13 +140,13 @@ barChartDataAvailability: ChartDataSets[] = [
           minut=Math.floor(element.ttr%60);
           if(hour<24)
           {
-            element.ttrstring=hour+' h : '+minut+'m : ';
+            element.ttrstring=hour+' h : '+minut+'m  ';
           }
           else if(hour>=24)
           {
             day=Math.floor(element.ttr/(60*24));
             hour=Math.floor((element.ttr/60)%24);
-            element.ttrstring=day+' d : '+hour+' h : '+minut+' m : ';
+            element.ttrstring=day+' d : '+hour+' h : '+minut+' m ';
           }
         }
         this.countTicket+=1;

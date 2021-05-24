@@ -22,7 +22,7 @@ export class ViolatedNodesOfMonthComponent implements OnInit {
   nodeAvailability :INodeAvailability []=[];
   @ViewChild(MatSort) sort?:MatSort ;
   @ViewChild(MatPaginator) paginator?:MatPaginator ;
-  displayedColumns: string[] = ['nodeID',  'availability'];
+  displayedColumns: string[] = ['nodeID',  'availability','action'];
   dataSource=new MatTableDataSource(this.nodeAvailability);
 
   
@@ -84,6 +84,11 @@ export class ViolatedNodesOfMonthComponent implements OnInit {
       this.dataSource.filter=this.searchKey.trim().toLowerCase();
     }
 
-
+    NodeTicket(nodeId:string){
+      console.log(nodeId);
+     
+      this.router.navigate(['/nodeticket'],{queryParams:{node:nodeId}})
+  
+    }
 
 }

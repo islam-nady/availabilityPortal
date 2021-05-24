@@ -52,6 +52,17 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header><b> Availability</b> </mat-header-cell>
         <mat-cell *matCellDef="let element"  data-label="availability"> <b>{{element.availability |number:'2.0-2'}}% </b></mat-cell>
     </ng-container>
+    <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef><b> Action</b></mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="action">
+            <button mat-button (click)="NodeTicket(element.nodeID)">
+                <mat-icon class="info">info_outline</mat-icon> details
+            </button>
+           
+        </mat-cell>
+
+    </ng-container>
+   
 
     <ng-container matColumnDef="loading">
         <mat-footer-cell *matFooterCellDef colspan="6">

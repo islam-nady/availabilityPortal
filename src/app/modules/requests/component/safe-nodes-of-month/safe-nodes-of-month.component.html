@@ -28,10 +28,15 @@
 <mat-divider></mat-divider>
 
 <div class="search-div">
-    <p  routerLink="/safeNodes">Safe</p>
-    <p  routerLink="/warningNodes">warning</p>
-    <p  routerLink="/violatedNodes">violated</p>
-    
+    <button mat-button  class="mt-3" routerLink="/safeNodes">
+        <mat-icon class="text-success">security</mat-icon> Safe
+    </button>  
+    <button mat-button class="mt-3"  routerLink="/warningNodes">
+        <mat-icon class="text-warning">warning</mat-icon> Warning
+    </button> 
+    <button mat-button class="mt-3"  routerLink="/violatedNodes">
+        <mat-icon class="text-danger">transfer_within_a_station</mat-icon> Violate
+    </button> 
     </div>
 <div class="example-container mat-elevation-z8">
 <mat-table [dataSource]="dataSource" matSort >

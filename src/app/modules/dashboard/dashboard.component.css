@@ -29,3 +29,6 @@ font-size: 15px;
 .mat-badge-medium.mat-badge-above .mat-badge-content{
   top: -1px;
 }
+.actions{
+  text-align: center;
+}

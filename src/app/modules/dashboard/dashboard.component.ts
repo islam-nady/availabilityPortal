@@ -20,9 +20,9 @@ export class DashboardComponent implements OnInit {
   
   month=new Date().toLocaleDateString('default',{month:'long'});
   
-   doughnutChartLabels: Label[] = ['warning', 'violated', 'safe'];
+   doughnutChartLabels: Label[] = [ 'safe','warning', 'violated'];
    doughnutChartData: MultiDataSet = [
-     [this.warnning, this.vaiolate, this.safe]
+     [ this.safe,this.warnning,this.vaiolate]
    ];
    doughnutChartType: ChartType = 'doughnut';
 
@@ -31,12 +31,12 @@ export class DashboardComponent implements OnInit {
 barChartOptions: ChartOptions = {
   responsive: true,
 };
-barChartLabels: Label[] =['warning', 'violated', 'safe'];
+barChartLabels: Label[] =[ 'safe','warning', 'violated'];
 barChartType: ChartType = 'bar';
 barChartLegend = true;
 barChartPlugins = [];
 barChartData: ChartDataSets[] = [
-  { data:[this.warnning, this.vaiolate, this.safe], label: 'Node Availability' }
+  { data:[this.safe,this.warnning, this.vaiolate], label: 'Node Availability' }
 ];
 
 
@@ -60,11 +60,11 @@ barChartData: ChartDataSets[] = [
     this.vaiolate=res.vaiolate;
     
    this.doughnutChartData = [
-      [this.warnning, this.vaiolate, this.safe]
+      [this.safe,this.warnning, this.vaiolate ]
     ];
 
      this.barChartData = [
-      { data:[this.warnning, this.vaiolate, this.safe], label: 'Node Availability' }
+      { data:[ this.safe,this.warnning, this.vaiolate], label: 'Node Availability' }
     ];    
     
     });
@@ -92,8 +92,7 @@ barChartData: ChartDataSets[] = [
   colors: Color[] = [
     {
       backgroundColor: [
-        'orange','red',
-        'green',
+        'green','orange','red',
         'blue','pink','orange','purple','brown','DeepPink', 'Salmon','DarkOrange'
       ]
     }

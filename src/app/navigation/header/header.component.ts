@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   @Output() public sidenavToggle = new EventEmitter();
    userName = localStorage.getItem('userName');
    nodeId:any;
-   dropdownsearch:string="";
+   dropdownsearch:string="nodeId";
   constructor(private router :Router,private callSupport:CallSupportCenterService) { 
     
     

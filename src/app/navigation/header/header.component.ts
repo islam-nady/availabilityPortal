@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
     
   });
  
-}, 900000);
+}, 3600000);
   }
   logOut(){
     localStorage.clear();

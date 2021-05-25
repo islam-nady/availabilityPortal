@@ -10,6 +10,8 @@ import {AccountComponent} from './modules/requests/component/account/account.com
 import {AccountService} from './modules/requests/service/account.service';
 import {FormsModule, ReactiveFormsModule, RequiredValidator} from '@angular/forms';
 import { DefaultComponent } from './layout/default/default.component';
+import { AuthInterceptor } from './interseptors/AuthInterceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,10 @@ import { DefaultComponent } from './layout/default/default.component';
    
   
   ],
-  providers: [AccountService ,Title],
+ 
+  providers: [
+    Title,AccountService,{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

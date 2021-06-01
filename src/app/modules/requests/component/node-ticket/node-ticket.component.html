@@ -52,9 +52,9 @@
       <td>{{acccountName}}</td>
       <td>{{acccountNumber}}</td>
       <td>{{nodeAvailability|number:'2.0-2'}}</td>
-      <td>{{sumTTR|number:'.0-2'}}</td>
+      <td>{{sumTTrString}}</td>
       <td>{{countTicket}}</td>
-      <td>{{MTTR|number:'.0-2'}}</td>
+      <td>{{MTTRString}}</td>
     </tr>
   
   </table>
@@ -159,9 +159,12 @@
     <ng-container matColumnDef="action">
         <mat-header-cell *matHeaderCellDef mat-sort-header><b> Action </b> </mat-header-cell>
         <mat-cell *matCellDef="let element" data-label="action">
-         
-         <a href="http://psc.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.request_ID}}"  target="_blank">Open PSC</a>
+         <pre>   
+       <a href="http://psc.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.request_ID}}"  target="_blank">Open PSC</a>   <a href="http://psd.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.psdTicketNumber}}"   *ngIf="element.psdTicketNumber!=null" target="_blank">Open PSD</a>
+        </pre>
+
         </mat-cell>
+
 
     </ng-container>
 

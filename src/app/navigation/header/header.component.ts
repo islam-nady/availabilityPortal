@@ -23,13 +23,13 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
- setInterval(() => {
+//  setInterval(() => {
    
-  this.callSupport.getTicketFromSupport().subscribe(res=>{
+//   this.callSupport.getTicketFromSupport().subscribe(res=>{
     
-  });
+//   });
  
-}, 3600000);
+// }, 3600000);
   }
   logOut(){
     localStorage.clear();

@@ -35,6 +35,8 @@ export class NodeTicketComponent implements OnInit {
   sumTTR:number=0;
   countTicket:number=0;
   MTTR:number=0;
+  sumTTrString:string='';
+  MTTRString:string='';
   orderId:number=0;
   nodeId:string=" ";
   nodeAvailability:number=0;
@@ -149,7 +151,7 @@ barChartDataAvailability: ChartDataSets[] = [
             element.ttrstring=day+' d : '+hour+' h : '+minut+' m ';
           }
         }
-        this.countTicket+=1;
+       
         
   
          
@@ -168,7 +170,61 @@ barChartDataAvailability: ChartDataSets[] = [
        
      });
 
+// for sum TTR
+let minutSumTTR:Number;
+    let hourSumTTR:Number;
+    let daySumTTR:Number;
+      if(this.sumTTR<60)
+      {
+      minutSumTTR=Math.floor(this.sumTTR) ;
+      this.sumTTrString=minutSumTTR+' m ' ;
+      }
+      else if(this.sumTTR>=60)
+      {
+        hourSumTTR=Math.floor(this.sumTTR/60);
+        minutSumTTR=Math.floor(this.sumTTR%60);
+        if(hourSumTTR<24)
+        {
+           this.sumTTrString=hourSumTTR+' h : '+minutSumTTR+'m  ';
+        }
+        else if(hourSumTTR>=24)
+        {
+          daySumTTR=Math.floor(this.sumTTR/(60*24));
+          hourSumTTR=Math.floor((this.sumTTR/60)%24);
+        this.sumTTrString= daySumTTR+' d : '+hourSumTTR+' h : '+minutSumTTR+' m ';
+        }
+      }
+
+
+
+
     this.MTTR=this.sumTTR/this.countTicket;
+    // for MTTR 
+    let minutMTTR:Number;
+    let hourMTTR:Number;
+    let dayMTTR:Number;
+      if(this.MTTR<60)
+      {
+      minutMTTR=Math.floor(this.MTTR) ;
+      this.MTTRString=minutMTTR+' m ' ;
+      }
+      else if(this.MTTR>=60)
+      {
+        hourMTTR=Math.floor(this.MTTR/60);
+        minutMTTR=Math.floor(this.MTTR%60);
+        if(hourMTTR<24)
+        {
+           this.MTTRString=hourMTTR+' h : '+minutMTTR+'m  ';
+        }
+        else if(hourMTTR>=24)
+        {
+          dayMTTR=Math.floor(this.MTTR/(60*24));
+          hourMTTR=Math.floor((this.MTTR/60)%24);
+        this.MTTRString= dayMTTR+' d : '+hourMTTR+' h : '+minutMTTR+' m ';
+        }
+      }
+
+
 
      
     this.nodeAvailability=res.availabilityNode;

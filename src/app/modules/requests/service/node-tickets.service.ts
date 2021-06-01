@@ -10,7 +10,7 @@ import { INodeDetails } from '../model/nodeDetails';
 export class NodeTicketsService {
 
   url =  "http://172.29.29.8:8014/api/customer/nodedetails"
- // url2="http://localhost:59370/api/customer/nodedetails"
+  //url2="http://localhost:59370/api/customer/nodedetails"
    constructor(private http: HttpClient) { }
 
    getRequests(nodeId:string,orderId:number): Observable<INodeDetails>{

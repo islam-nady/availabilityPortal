@@ -52,7 +52,7 @@ export class RequestComponent implements OnInit {
     // }
     this.requestService.getRequests(this.kind).subscribe(res=>{
       this.nodeAvailability = res as INodeAvailability[];
-      //console.log(res);
+      console.log(res);
       this.dataSource=new MatTableDataSource(this.nodeAvailability);
       this.dataSource.paginator=this.paginator as MatPaginator;
       this.dataSource.sort = this.sort as MatSort;

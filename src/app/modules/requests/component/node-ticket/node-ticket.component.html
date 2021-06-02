@@ -159,9 +159,16 @@
     <ng-container matColumnDef="action">
         <mat-header-cell *matHeaderCellDef mat-sort-header><b> Action </b> </mat-header-cell>
         <mat-cell *matCellDef="let element" data-label="action">
-         <pre>   
-       <a href="http://psc.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.request_ID}}"  target="_blank">Open PSC</a>   <a href="http://psd.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.psdTicketNumber}}"   *ngIf="element.psdTicketNumber!=null" target="_blank">Open PSD</a>
-        </pre>
+            <button mat-button>
+               
+                <a class="open btn btn-info btn-sm" href="http://psc.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.request_ID}}"  target="_blank">Open PSC</a> 
+            </button>
+            <button mat-button >
+             
+                <a class="open btn btn-sm btn-success" href="http://psd.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.psdTicketNumber}}"   *ngIf="element.psdTicketNumber!=null"   target="_blank">Open PSD</a>
+            </button>
+
+ 
 
         </mat-cell>
 

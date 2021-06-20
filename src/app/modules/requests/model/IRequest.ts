@@ -19,7 +19,8 @@ export interface IRequest{
     item :string;
     psdRootCause:string;
     psdRemedyAction :string;
-
+    group:string; 
+    hWdevice:string;
 
 
 }

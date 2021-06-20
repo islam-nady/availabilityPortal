@@ -1,78 +1,17 @@
 <div class="search-div" fxLayout="row">
     <mat-list-item class="header-tag" routerLink="/" > Home </mat-list-item>/
     <mat-list-item class="header-tag" routerLink="/allCustomer" >ALL Customer  </mat-list-item>/
-    <mat-list-item class="header-tag" (click)="accountNode()" > {{acccountName}}  </mat-list-item>/
-   
-    <mat-list-item class="header-tag active" routerLink="#">  NodeTicket </mat-list-item>
+    
+    <mat-list-item class="header-tag active" routerLink="#"> global Tickets </mat-list-item>
 
 </div>
-
-<mat-card class="example-card">
-    <mat-card-header>
-        <mat-card-title>
-           NodeDetails
-        </mat-card-title>
-    </mat-card-header>
- <mat-divider></mat-divider>
- <!-- <br>
- <br>
-
- <label>Node Id : </label><p>{{nodeId}}</p>
- <hr>
- <label>Account Name : </label><p>{{acccountName}}</p>
- <hr>
- <label>Account Number : </label><p>{{acccountNumber}}</p>
-<hr>
- <label>Node Availability:</label> <p>{{nodeAvailability|number:'2.0-2'}}</p> 
- <hr>
- <label>Sum TTR:</label> <p>{{sumTTR|number:'.0-2'}}</p> 
- <hr>
- <label>Count Ticket:</label> <p>{{countTicket}}</p> 
- <hr>
- <label>MTTR:</label> <p>{{MTTR|number:'.0-2'}}</p> <br>
- <br>
-
-
- -->
-
-
-
- <table id="NodeInfo">
-    <tr>
-      <th>Node Id</th>
-      <th>Account Name</th>
-      <th>Account Number</th>
-      <th>Node Availability</th>
-      <th>SumTTR</th>
-      <th>Count Ticket</th>
-      <th>MTTR</th>
-    </tr>
-    <tr>
-      <td>{{nodeId}}</td>
-      <td>{{acccountName}}</td>
-      <td>{{acccountNumber}}</td>
-      <td>{{nodeAvailability|number:'2.0-2'}}</td>
-      <td>{{sumTTrString}}</td>
-      <td>{{countTicket}}</td>
-      <td>{{MTTRString}}</td>
-    </tr>
-  
-  </table>
-  
-
-
-</mat-card>
-<mat-divider></mat-divider>
-
-
 <mat-card class="example-card">
      <mat-card-header>
         <mat-card-title>
-           NodeTicket
+           Global Ticket
         </mat-card-title>
     
-
- <div class="search-div">
+<div class="search-div">
    
     <mat-form-field class="search-form-field" floatLabel="never">
         <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()"> 
@@ -82,6 +21,7 @@
     </mat-form-field>
 </div>
 </mat-card-header>
+
 <mat-divider></mat-divider> 
 <div class="example-container mat-elevation-z8">
 <mat-table [dataSource]="dataSource" matSort >
@@ -165,29 +105,7 @@
         <mat-cell *matCellDef="let element" data-label="ttrstring"> {{element.ttrstring}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="action">
-        <mat-header-cell *matHeaderCellDef mat-sort-header><b> Action </b> </mat-header-cell>
-        <mat-cell *matCellDef="let element" data-label="action">
-            <button mat-button>
-               
-                <a class="open btn btn-info btn-sm" href="http://psc.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.request_ID}}"  target="_blank">Open PSC</a> 
-            </button>
-            <button mat-button >
-             
-                <a class="open btn btn-sm btn-success" href="http://psd.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.psdTicketNumber}}"   *ngIf="element.psdTicketNumber!=null"   target="_blank">Open PSD</a>
-            </button>
-
-            <button mat-button (click)="GlobalTicket(element.psdTicketNumber)"*ngIf="element.psdTicketNumber!=null&&element.category=='Global'">
-                <mat-icon>info_outline</mat-icon> 
-                Show Tickets
-            </button>
-
-        </mat-cell>
-
-
-    </ng-container>
-
-    <!-- |number:'.0-0'-->
+  
     <ng-container matColumnDef="loading">
         <mat-footer-cell *matFooterCellDef colspan="6">
             <div class="spinner">
@@ -213,62 +131,4 @@
 </div>
 <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" [pageSize]="5"   showFirstLastButtons></mat-paginator>
 
-
 </mat-card>
-<mat-divider></mat-divider>
-<div class="row mx-0 pt-4 ">
-    <div class="col-sm-12 col-md-6 mat-elevation-z8">
-  <mat-card class="example-card">
-    <mat-card-header>
-        <mat-card-title>
-            Sum TTR For Ticket Per Node
-        </mat-card-title>
-    </mat-card-header>
-    <mat-divider></mat-divider>
-  
-
-
-
-    <mat-divider></mat-divider>
-<div class="chart-wrapper">
-    <canvas baseChart 
-    [datasets]="barChartData"
-    [colors]="colors"
-    [labels]="barChartLabels"
-    [options]="barChartOptions"
-    [plugins]="barChartPlugins"
-    [legend]="barChartLegend"
-    [chartType]="barChartType">
-  </canvas>
-</div>
-</mat-card>  
-
-</div>
-
-<div class="col-sm-12 col-md-6 mat-elevation-z8">
-<mat-card class="example-card">
-    <mat-card-header>
-        <mat-card-title>
-            Node Availability Per Month
-        </mat-card-title>
-    </mat-card-header>
-    <mat-divider></mat-divider>
-  
-
-
-
-    <mat-divider></mat-divider>
-<div class="chart-wrapper">
-    <canvas baseChart 
-    [datasets]="barChartDataAvailability"
-    [colors]="colors"
-    [labels]="barChartLabelsAvailability"
-    [options]="barChartOptionsAvailability"
-    [plugins]="barChartPluginsAvailability"
-    [legend]="barChartLegendAvailability"
-    [chartType]="barChartTypeAvailability">
-  </canvas>
-</div>
-</mat-card>  
-</div>
-</div>

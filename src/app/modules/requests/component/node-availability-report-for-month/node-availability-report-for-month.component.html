@@ -1,0 +1,38 @@
+<!-- <mat-form-field>
+    <mat-label>Date</mat-label>
+    <input  [value]="date.value" matInput [matDatepicker]="myPicker"  placeholder="date">
+    <mat-datepicker-toggle  matSuffix [for]="myPicker"></mat-datepicker-toggle>
+    <mat-datepicker #myPicker></mat-datepicker>
+</mat-form-field> -->
+
+    <label for="bdaymonth">Report For Node Availability:</label>
+    <input type="month"  [(ngModel)]="date"  id="bdaymonth" name="bdaymonth">
+   
+  
+    <!-- mat-menu-item *ngIf="date!=null"  -->
+<button  (click)="ExportTOExcelNodeAvailability()"   [disabled]="date==''" >
+    <mat-icon>file_download</mat-icon>
+    <span>Export Excel  </span>
+</button>
+<br>
+
+<label for="bdaymonth">Report For Tickets in month:</label>
+<input type="month"  [(ngModel)]="dateTicket"  id="bdaymonthticket" name="bdaymonth">
+
+
+<!-- mat-menu-item *ngIf="date!=null"  -->
+<button  (click)="ExportTOExcelTicketData()"   [disabled]="dateTicket==''" >
+<mat-icon>file_download</mat-icon>
+<span>Export Excel </span>
+</button>
+<br>
+
+<label for="bdaymonth">Report For Availability in month:</label>
+<input type="month"  [(ngModel)]="dateAvailability"  id="availmonth" name="bdaymonth">
+
+
+<!-- mat-menu-item *ngIf="date!=null"  -->
+<button  (click)="ExportTOExcelAvailabilityDataForSelectedMonth()"   [disabled]="dateAvailability==''" >
+<mat-icon>file_download</mat-icon>
+<span>Export Excel </span>
+</button>

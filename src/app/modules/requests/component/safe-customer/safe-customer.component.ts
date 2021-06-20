@@ -17,8 +17,6 @@ import { SafecustomerService } from '../../service/safecustomer.service';
 export class SafeCustomerComponent implements OnInit {
 
   searchKey:string ='' ;
- 
-  
   nodeAvailability :INodeAvailability []=[];
   @ViewChild(MatSort) sort?:MatSort ;
   @ViewChild(MatPaginator) paginator?:MatPaginator ;
@@ -26,7 +24,7 @@ export class SafeCustomerComponent implements OnInit {
   dataSource=new MatTableDataSource(this.nodeAvailability);
  
   
-  kind:string="";
+  kind:string=" ";
   name:string=" ";
   accountNumber:string=" ";
   constructor(private safecustomerService: SafecustomerService ,

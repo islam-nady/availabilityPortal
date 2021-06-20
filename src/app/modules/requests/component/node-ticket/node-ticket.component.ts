@@ -12,6 +12,7 @@ import { IRequest } from '../../model/IRequest';
 import { NodeTicketsService } from '../../service/node-tickets.service';
 import {FormGroup,FormControl, Validators} from '@angular/forms';
 import { INodeDetails } from '../../model/nodeDetails';
+
 @Component({
   selector: 'app-node-ticket',
   templateUrl: './node-ticket.component.html',
@@ -29,7 +30,7 @@ export class NodeTicketComponent implements OnInit {
   @ViewChild(MatPaginator) paginator?:MatPaginator ;
  
  
-  displayedColumns: string[] = ['request_ID','subject','category', 'subCategory','psdTicketNumber','orderId','item','creationDateTime','resolveDateTime','completeDateTime','psdRootCause','psdRemedyAction','request_Status','nodeID','ttrstring','action'];
+  displayedColumns: string[] = ['request_ID','subject','category', 'subCategory','psdTicketNumber','orderId','item','creationDateTime','resolveDateTime','completeDateTime','psdRootCause','psdRemedyAction','request_Status','nodeID','hWdevice','group','ttrstring','action'];
   dataSource=new MatTableDataSource(this.nodeDetails.requests);
 
   sumTTR:number=0;
@@ -258,6 +259,12 @@ let minutSumTTR:Number;
   accountNode(){
  
     this.router.navigate(['/safeCustomer'],{queryParams:{account:this.acccountName,kind:"vaiolate"}})
+
+  }
+
+  GlobalTicket(psdNumber:number){
+ 
+    this.router.navigate(['/global'],{queryParams:{psdNumber:psdNumber}})
 
   }
   

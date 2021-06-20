@@ -45,6 +45,11 @@ import { ViolatedNodesOfMonthService } from 'src/app/modules/requests/service/vi
 import { WarningNodesOfMonthService } from 'src/app/modules/requests/service/warning-nodes-of-month.service';
 import { WarningNodesOfMonthComponent } from 'src/app/modules/requests/component/warning-nodes-of-month/warning-nodes-of-month.component';
 import { ViolatedNodesOfMonthComponent } from 'src/app/modules/requests/component/violated-nodes-of-month/violated-nodes-of-month.component';
+import { NodeAvailabilityReportForMonthComponent } from 'src/app/modules/requests/component/node-availability-report-for-month/node-availability-report-for-month.component';
+import { ReportService } from 'src/app/modules/requests/service/report.service';
+import { NotificationService } from 'src/app/shared/services/notification.service';
+import { GlobalComponent } from 'src/app/modules/requests/component/global/global.component';
+import { GlobalService } from 'src/app/modules/requests/service/global.service';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -68,6 +73,8 @@ import { ViolatedNodesOfMonthComponent } from 'src/app/modules/requests/componen
   SafeNodesOfMonthComponent,
   WarningNodesOfMonthComponent,
   ViolatedNodesOfMonthComponent,
+  NodeAvailabilityReportForMonthComponent,
+  GlobalComponent,
 
 
     
@@ -90,7 +97,7 @@ import { ViolatedNodesOfMonthComponent } from 'src/app/modules/requests/componen
   ],
   providers:[
     EmpService,RequestService,SafeService,WarningService,VaiolateService,safeNodesOfMonthService,ViolatedNodesOfMonthService,WarningNodesOfMonthService
-   ,SafecustomerService,Title,CountNodeService,SammuryService,NodeTicketsService,CustomerinfoPerYearService,CallSupportCenterService],
+   ,SafecustomerService,Title,GlobalService,CountNodeService,SammuryService,NodeTicketsService,CustomerinfoPerYearService,CallSupportCenterService,ReportService,NotificationService],
   entryComponents:[MatConfirmDialogComponent]
 
 

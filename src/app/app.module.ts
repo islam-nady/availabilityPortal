@@ -13,13 +13,13 @@ import { DefaultComponent } from './layout/default/default.component';
 import { AuthInterceptor } from './interseptors/AuthInterceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AccountComponent,
-    
-    
-    
+  
+   
     
     
    

@@ -11,6 +11,8 @@ import { AllCustomerComponent } from './modules/requests/component/all-customer/
 import { CountNodeComponent } from './modules/requests/component/count-node/count-node.component';
 import { CustomerInfoPerMonthComponent } from './modules/requests/component/customer-info-per-month/customer-info-per-month.component';
 import { CustomerInfoPerYearComponent } from './modules/requests/component/customer-info-per-year/customer-info-per-year.component';
+import { GlobalComponent } from './modules/requests/component/global/global.component';
+import { NodeAvailabilityReportForMonthComponent } from './modules/requests/component/node-availability-report-for-month/node-availability-report-for-month.component';
 import { NodeTicketComponent } from './modules/requests/component/node-ticket/node-ticket.component';
 import { RequestComponent } from './modules/requests/component/request/request.component';
 import { SafeCustomerComponent } from './modules/requests/component/safe-customer/safe-customer.component';
@@ -73,16 +75,17 @@ const routes: Routes = [
       component:CustomerInfoPerMonthComponent,
       canActivate:[AuthGuardService]
     },
-    // {
-    //   path:'warning',
-    //   component:WarningComponent,
-    //   canActivate:[AuthGuardService]
-    // },
-    // {
-    //   path:'vaiolate',
-    //   component:VaiolataComponent,
-    //   canActivate:[AuthGuardService]
-    // },
+    {
+      path:'nodeAvailabilityReport',
+      component:NodeAvailabilityReportForMonthComponent,
+      canActivate:[AuthGuardService]
+    },
+    {
+      path:'global',
+      component:GlobalComponent,
+      canActivate:[AuthGuardService]
+    },
+   
     {
       path:'safeCustomer',
       component:SafeCustomerComponent,

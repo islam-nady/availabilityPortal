@@ -60,21 +60,40 @@ padding-left: 10px !important;
   mat-cell:last-child, mat-header-cell:last-child{
     word-wrap: break-word !important;
     white-space: unset !important;
-    flex: 0 0 20% !important;
-    width: 20%;
+    flex: 0 0 30% !important;
+    width: 30%;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
     -webkit-hyphens: auto;
     hyphens: auto;
     border-bottom: 1px solid #ececec;
-    justify-content: center;
+    /* justify-content: center; */
   }
+  
   .open{
     display: inline-block;
+    margin-right: 10px;
     
   }
-
+.b1{
+  background-color: crimson;
+  color: #fff !important;
+}
+a, a:hover{
+  color: #fff !important;
+}
+.mat-button:last-of-type{
+  padding: 0 16px !important;
+}
+.b2{
+  background-color: #1cac1c;
+  color: #fff !important;
+}
+.b3{
+  background-color: #00adff;
+  color: #fff !important;
+}
 
 
 

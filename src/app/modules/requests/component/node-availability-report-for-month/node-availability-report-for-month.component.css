@@ -1,0 +1,21 @@
+.tabContent{
+    padding:50px 30px;
+    width: 63%;
+    margin: 0 auto;
+  
+}
+button{
+    height: 48px;
+    float: right;
+    margin-top: 3px;
+}
+ span{
+     line-height: 3;
+ }
+
+mat-form-field{
+    width: 77%;
+}
+mat-tab-group{
+    background-color: #fefefe;
+}

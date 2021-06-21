@@ -1,16 +1,76 @@
-<!-- <mat-form-field>
-    <mat-label>Date</mat-label>
-    <input  [value]="date.value" matInput [matDatepicker]="myPicker"  placeholder="date">
-    <mat-datepicker-toggle  matSuffix [for]="myPicker"></mat-datepicker-toggle>
-    <mat-datepicker #myPicker></mat-datepicker>
-</mat-form-field> -->
 
-    <label for="bdaymonth">Report For Node Availability:</label>
-    <input type="month"  [(ngModel)]="date"  id="bdaymonth" name="bdaymonth">
+<div class="search-div" fxLayout="row">
+    <mat-list-item class="header-tag" routerLink="/" > Home </mat-list-item>/
    
-  
-    <!-- mat-menu-item *ngIf="date!=null"  -->
-<button  (click)="ExportTOExcelNodeAvailability()"   [disabled]="date==''" >
+    <mat-list-item class="header-tag active" routerLink="#"> Availability Report for Selected Month</mat-list-item>
+
+</div>
+
+
+<mat-tab-group class="mt-3" mat-align-tabs="center">
+    
+    <mat-tab label="Report For Node Availability">
+        <div class="tabContent">
+       
+        <mat-form-field appearance="fill">
+            <mat-label>Node Availability</mat-label>
+            <input type="month" matInput [(ngModel)]="date"  id="bdaymonth" name="bdaymonth">
+
+          </mat-form-field>
+        <!-- mat-menu-item *ngIf="date!=null"  -->
+<button mat-raised-button  color="accent"  (click)="ExportTOExcelNodeAvailability()"   [disabled]="date==''" >
+ <mat-icon>file_download</mat-icon>
+Export Excel
+</button>
+</div>
+</mat-tab>
+    <mat-tab label="Report For Tickets in month"> 
+        <div class="tabContent">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Ticket in month</mat-label>
+                <input type="month" matInput [(ngModel)]="dateTicket"  id="bdaymonthticket" name="bdaymonth">
+
+              </mat-form-field>
+      
+
+        <!-- mat-menu-item *ngIf="date!=null"  -->
+        <button mat-raised-button  color="accent"  (click)="ExportTOExcelTicketData()"   [disabled]="dateTicket==''" >
+        <mat-icon>file_download</mat-icon>
+        Export Excel 
+        </button>
+        </div>
+     </mat-tab>
+    <mat-tab label="Report For Availability in month:"> 
+        <div class="tabContent">
+
+            <mat-form-field appearance="fill">
+                <mat-label>available month</mat-label>
+                <input type="month" matInput [(ngModel)]="dateAvailability"  id="availmonth" name="bdaymonth">
+              </mat-form-field>
+       
+
+
+        <!-- mat-menu-item *ngIf="date!=null"  -->
+        <button mat-raised-button  color="accent" (click)="ExportTOExcelAvailabilityDataForSelectedMonth()"   [disabled]="dateAvailability==''" >
+        <mat-icon>file_download</mat-icon>
+       Export Excel
+        </button>
+        </div>
+    </mat-tab>
+  </mat-tab-group>
+
+
+
+
+
+
+<!-- 
+        <label for="bdaymonth">Report For Node Availability:</label>
+        <input type="month"  [(ngModel)]="date"  id="bdaymonth" name="bdaymonth"> -->
+       
+           <!-- mat-menu-item *ngIf="date!=null"  -->
+<!-- <button  (click)="ExportTOExcelNodeAvailability()"   [disabled]="date==''" >
     <mat-icon>file_download</mat-icon>
     <span>Export Excel  </span>
 </button>
@@ -18,21 +78,28 @@
 
 <label for="bdaymonth">Report For Tickets in month:</label>
 <input type="month"  [(ngModel)]="dateTicket"  id="bdaymonthticket" name="bdaymonth">
-
+ -->
 
 <!-- mat-menu-item *ngIf="date!=null"  -->
-<button  (click)="ExportTOExcelTicketData()"   [disabled]="dateTicket==''" >
+<!-- <button  (click)="ExportTOExcelTicketData()"   [disabled]="dateTicket==''" >
 <mat-icon>file_download</mat-icon>
 <span>Export Excel </span>
 </button>
-<br>
+<br> -->
 
-<label for="bdaymonth">Report For Availability in month:</label>
+<!-- <label for="bdaymonth">Report For Availability in month:</label>
 <input type="month"  [(ngModel)]="dateAvailability"  id="availmonth" name="bdaymonth">
-
+ -->
 
 <!-- mat-menu-item *ngIf="date!=null"  -->
-<button  (click)="ExportTOExcelAvailabilityDataForSelectedMonth()"   [disabled]="dateAvailability==''" >
+<!-- <button  (click)="ExportTOExcelAvailabilityDataForSelectedMonth()"   [disabled]="dateAvailability==''" >
 <mat-icon>file_download</mat-icon>
 <span>Export Excel </span>
-</button>
+</button> -->
+ 
+
+
+
+
+  
+ 

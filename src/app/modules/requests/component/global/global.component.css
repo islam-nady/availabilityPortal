@@ -1,0 +1,27 @@
+mat-cell, mat-header-cell{
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 20% !important;
+    width: 20%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    border-bottom: 1px solid #ececec;
+  }
+  mat-cell:nth-child(2), mat-header-cell:nth-child(2){
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 25% !important;
+    width: 25%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    border-bottom: 1px solid #ececec;
+  }
+  mat-row:nth-of-type(odd){
+      background-color: #fff !important;
+  }

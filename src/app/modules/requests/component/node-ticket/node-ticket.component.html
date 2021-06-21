@@ -168,18 +168,18 @@
     <ng-container matColumnDef="action">
         <mat-header-cell *matHeaderCellDef mat-sort-header><b> Action </b> </mat-header-cell>
         <mat-cell *matCellDef="let element" data-label="action">
-            <button mat-button>
+            <button mat-button class="b1 btn-sm mr-1">
                
-                <a class="open btn btn-info btn-sm" href="http://psc.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.request_ID}}"  target="_blank">Open PSC</a> 
+                <a class=" " href="http://psc.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.request_ID}}"  target="_blank">Open PSC</a> 
             </button>
-            <button mat-button >
+            <button mat-button  class="btn-sm b2 mr-1">
              
-                <a class="open btn btn-sm btn-success" href="http://psd.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.psdTicketNumber}}"   *ngIf="element.psdTicketNumber!=null"   target="_blank">Open PSD</a>
+                <a class="" href="http://psd.tedata.net:8080/WorkOrder.do?woMode=viewWO&woID={{element.psdTicketNumber}}"   *ngIf="element.psdTicketNumber!=null"   target="_blank">Open PSD</a>
             </button>
 
-            <button mat-button (click)="GlobalTicket(element.psdTicketNumber)"*ngIf="element.psdTicketNumber!=null&&element.category=='Global'">
-                <mat-icon>info_outline</mat-icon> 
-                Show Tickets
+            <button class="btn-sm b3" mat-button (click)="GlobalTicket(element.psdTicketNumber)" *ngIf="element.psdTicketNumber!=null&&element.category=='Global'">
+               
+              Show Tickets 
             </button>
 
         </mat-cell>

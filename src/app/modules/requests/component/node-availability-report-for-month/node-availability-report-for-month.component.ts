@@ -42,14 +42,14 @@ export class NodeAvailabilityReportForMonthComponent implements OnInit {
     const file = new File([blob],  'NodeAvailability' + Date.now() +'.xlsx', { type: 'application/vnd.ms.excel' });
    
  saveAs(file,'NodeAvailability' + Date.now() +'.xlsx')
-    
+ setTimeout(()=> this.loading=false,1000) 
   },err=>{
     
    this.notificationService.warn("! Fail")
 
  });
 
- setTimeout(()=> this.loading=false,3000)
+
 }
 
 
@@ -66,14 +66,13 @@ ExportTOExcelTicketData()
     const file = new File([blob],  'TicketsData' + Date.now() +'.xlsx', { type: 'application/vnd.ms.excel' });
    
  saveAs(file,'TicketsData' + Date.now() +'.xlsx')
-    
+ setTimeout(()=> this.loading=false,1000)
   },err=>{
     
    this.notificationService.warn("! Fail")
 
  });
- setTimeout(()=> this.loading=false,3000)
- 
+
 }
 
 ExportTOExcelAvailabilityDataForSelectedMonth(kind:string)
@@ -88,14 +87,13 @@ ExportTOExcelAvailabilityDataForSelectedMonth(kind:string)
     const file = new File([blob],  'AvailabilityData' + Date.now() +'.xlsx', { type: 'application/vnd.ms.excel' });
    
  saveAs(file,'AvailabilityData' + Date.now() +'.xlsx')
-    
+ setTimeout(()=> this.loading=false,1000)
   },err=>{
     
    this.notificationService.warn("! Fail")
 
  });
 
- setTimeout(()=> this.loading=false,3000)
 }
 
 

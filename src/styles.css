@@ -369,3 +369,6 @@ mat-row, mat-header-row, mat-footer-row, th.mat-header-cell, td.mat-cell, td.mat
   overflow-x:hidden !important ;
 }
 
+.mat-tab-label{
+  padding: 0 10px !important;
+}

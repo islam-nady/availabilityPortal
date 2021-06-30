@@ -19,3 +19,6 @@ mat-form-field{
 mat-tab-group{
     background-color: #fefefe;
 }
+mat-tab-label{
+    padding: 0 10px !important;
+}

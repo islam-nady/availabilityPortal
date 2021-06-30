@@ -41,18 +41,53 @@ Export Excel
         </button>
         </div>
      </mat-tab>
-    <mat-tab label="Report For Availability in month:"> 
+    <mat-tab label="Report For violated  in month:"> 
         <div class="tabContent">
 
             <mat-form-field appearance="fill">
-                <mat-label>available month</mat-label>
+                <mat-label>availability month</mat-label>
                 <input type="month" matInput [(ngModel)]="dateAvailability"  id="availmonth" name="bdaymonth">
               </mat-form-field>
        
 
 
         <!-- mat-menu-item *ngIf="date!=null"  -->
-        <button mat-raised-button  color="accent" (click)="ExportTOExcelAvailabilityDataForSelectedMonth()"   [disabled]="dateAvailability==''" >
+        <button mat-raised-button  color="accent" (click)="ExportTOExcelAvailabilityDataForSelectedMonth('violated')"   [disabled]="dateAvailability==''" >
+        <mat-icon>file_download</mat-icon>
+       Export Excel
+        </button>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Report For Warnning  in month:"> 
+        <div class="tabContent">
+
+            <mat-form-field appearance="fill">
+                <mat-label>availability month</mat-label>
+                <input type="month" matInput [(ngModel)]="dateAvailability"  id="availmonth" name="bdaymonth">
+              </mat-form-field>
+       
+
+
+        <!-- mat-menu-item *ngIf="date!=null"  -->
+        <button mat-raised-button  color="accent" (click)="ExportTOExcelAvailabilityDataForSelectedMonth('warnning')"   [disabled]="dateAvailability==''" >
+        <mat-icon>file_download</mat-icon>
+       Export Excel
+        </button>
+        </div>
+    </mat-tab>
+    <mat-tab label="Report For Safe  in month:"> 
+        <div class="tabContent">
+
+            <mat-form-field appearance="fill">
+                <mat-label>availability month</mat-label>
+                <input type="month" matInput [(ngModel)]="dateAvailability"  id="availmonth" name="bdaymonth">
+              </mat-form-field>
+       
+
+
+        <!-- mat-menu-item *ngIf="date!=null"  -->
+        <button mat-raised-button  color="accent" (click)="ExportTOExcelAvailabilityDataForSelectedMonth('safe')"   [disabled]="dateAvailability==''" >
         <mat-icon>file_download</mat-icon>
        Export Excel
         </button>

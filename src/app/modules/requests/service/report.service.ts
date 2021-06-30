@@ -26,9 +26,9 @@ ExportExcelTicketdata(mon:number,year:number ):Observable<Blob>{
 }
 
 
-ExportExcelAvailabilitydata(mon:number,year:number ):Observable<Blob>{
+ExportExcelAvailabilitydata(mon:number,year:number ,kind:string):Observable<Blob>{
 
-  return this.http.get(`${this.url}/ReportAvailabilityForSelectedMonth/`+mon+'/'+year,{responseType: 'blob',headers: this.headers});
+  return this.http.get(`${this.url}/ReportAvailabilityForSelectedMonth/`+mon+'/'+year+'/'+kind,{responseType: 'blob',headers: this.headers});
   
 }
 

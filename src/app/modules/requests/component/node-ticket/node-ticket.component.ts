@@ -127,7 +127,7 @@ barChartDataAvailability: ChartDataSets[] = [
     }
     this.nodeTicketService.getRequests(this.nodeId,this.orderId).subscribe(res=>{
       this.nodeDetails = res as INodeDetails ;
-      
+      this.nodeId=this.nodeDetails.nodeId;
       this.nodeDetails.requests.forEach(element => {
       let minut:Number;
       let hour:Number;

@@ -71,13 +71,13 @@ ExportTOExcelTicketData()
  
 }
 
-ExportTOExcelAvailabilityDataForSelectedMonth()
+ExportTOExcelAvailabilityDataForSelectedMonth(kind:string)
 {
  
   let datesplit= this.dateAvailability.split("-",2);
   let mon=datesplit[1] as any ;
   let year=datesplit[0] as any ;
-  this.reportService.ExportExcelAvailabilitydata(mon ,year).subscribe(res=>{
+  this.reportService.ExportExcelAvailabilitydata(mon ,year,kind).subscribe(res=>{
 
     const blob = new Blob([res], { type : 'application/vnd.ms.excel' });
     const file = new File([blob],  'AvailabilityData' + Date.now() +'.xlsx', { type: 'application/vnd.ms.excel' });

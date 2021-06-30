@@ -39,24 +39,24 @@ export class HeaderComponent implements OnInit {
   
   NodeTicket(event: any){
   
-    this.nodeId = event.target.value;
+    this.nodeId = event.target.value.trim();
    // this.router.navigate(['/nodeticket'],{queryParams:{node:this.nodeId}})
 if(this.dropdownsearch=="nodeId")
 {
-  this.router.navigate(['/nodeticket'],{queryParams:{node:this.nodeId}})
+  this.router.navigate(['/nodeticket'],{queryParams:{node:this.nodeId.trim()}})
 }
 else if(this.dropdownsearch=="accountName")
 {
-  this.router.navigate(['/safeCustomer'],{queryParams:{account:this.nodeId,kind:"vaiolate"}})
+  this.router.navigate(['/safeCustomer'],{queryParams:{account:this.nodeId.trim(),kind:"vaiolate"}})
 
 }
 else if(this.dropdownsearch=="accountNumber")
 {
-  this.router.navigate(['/safeCustomer'],{queryParams:{accountNumber:this.nodeId,kind:"vaiolate"}})
+  this.router.navigate(['/safeCustomer'],{queryParams:{accountNumber:this.nodeId.trim(),kind:"vaiolate"}})
 }
 else if(this.dropdownsearch=="orderId")
 {
-  this.router.navigate(['/nodeticket'],{queryParams:{orderId:this.nodeId}})
+  this.router.navigate(['/nodeticket'],{queryParams:{orderId:this.nodeId.trim()}})
 }
 
   }

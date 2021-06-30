@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NotificationService } from 'src/app/shared/services/notification.service';
 import { ReportService } from '../../service/report.service';
 import { saveAs } from 'file-saver';
+import { Title } from '@angular/platform-browser';
 
 
 
@@ -19,8 +20,11 @@ export class NodeAvailabilityReportForMonthComponent implements OnInit {
   dateTicket:string='';
   dateAvailability:string='';
   
-  constructor(private reportService:ReportService,private notificationService:NotificationService
-    ) { }
+  constructor(private reportService:ReportService,private notificationService:NotificationService, private titleService:Title
+    ) {
+      this.titleService.setTitle("Availability | Report");
+      
+     }
 
   ngOnInit(): void {
     

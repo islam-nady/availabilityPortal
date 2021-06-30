@@ -50,6 +50,7 @@ import { ReportService } from 'src/app/modules/requests/service/report.service';
 import { NotificationService } from 'src/app/shared/services/notification.service';
 import { GlobalComponent } from 'src/app/modules/requests/component/global/global.component';
 import { GlobalService } from 'src/app/modules/requests/service/global.service';
+import { LoaderComponent } from 'src/app/shared/components/loader/loader.component';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -75,6 +76,7 @@ import { GlobalService } from 'src/app/modules/requests/service/global.service';
   ViolatedNodesOfMonthComponent,
   NodeAvailabilityReportForMonthComponent,
   GlobalComponent,
+  LoaderComponent
 
 
     

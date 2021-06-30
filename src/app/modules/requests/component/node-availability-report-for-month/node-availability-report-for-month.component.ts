@@ -14,7 +14,7 @@ import { saveAs } from 'file-saver';
 export class NodeAvailabilityReportForMonthComponent implements OnInit {
 
   
-  
+  loading=false;
   date :string='';
   dateTicket:string='';
   dateAvailability:string='';
@@ -28,7 +28,7 @@ export class NodeAvailabilityReportForMonthComponent implements OnInit {
 
 
   ExportTOExcelNodeAvailability()
-{
+{ this.loading=true;
   let datesplit= this.date.split("-",2);
   let mon=datesplit[1] as any ;
   let year=datesplit[0] as any ;
@@ -45,13 +45,14 @@ export class NodeAvailabilityReportForMonthComponent implements OnInit {
 
  });
 
- 
+ setTimeout(()=> this.loading=false,3000)
 }
 
 
 
 ExportTOExcelTicketData()
 {
+  this.loading=true;
   let datesplit= this.dateTicket.split("-",2);
   let mon=datesplit[1] as any ;
   let year=datesplit[0] as any ;
@@ -67,13 +68,13 @@ ExportTOExcelTicketData()
    this.notificationService.warn("! Fail")
 
  });
-
+ setTimeout(()=> this.loading=false,3000)
  
 }
 
 ExportTOExcelAvailabilityDataForSelectedMonth(kind:string)
 {
- 
+ this.loading=true;
   let datesplit= this.dateAvailability.split("-",2);
   let mon=datesplit[1] as any ;
   let year=datesplit[0] as any ;
@@ -90,7 +91,7 @@ ExportTOExcelAvailabilityDataForSelectedMonth(kind:string)
 
  });
 
- 
+ setTimeout(()=> this.loading=false,3000)
 }
 
 

@@ -93,6 +93,41 @@ Export Excel
         </button>
         </div>
     </mat-tab>
+
+
+    <mat-tab label="Report For special data in month:"> 
+        <div class="tabContent">
+
+           
+            <select id="select" [(ngModel)]="dropdownsearch"  >
+               
+                <option  value="nodeid">Node Id</option>
+                <option value="customername">Account Name</option>
+                <option value="customernumber">Account Number</option>
+                <option value="orderid">Order Id</option>
+                </select>
+
+                <input  name="Search" [(ngModel)]="searchvalue" placeholder="Search " >
+        
+              
+            <mat-form-field appearance="fill">
+                <mat-label>availability month</mat-label>
+                <input type="month" matInput [(ngModel)]="dateAvailability"  id="availmonth" name="bdaymonth">
+              </mat-form-field>
+             
+                
+            
+
+               
+           
+         <!-- (keyup.enter)="NodeTicket($event)" type="search" id="site-search"-->
+        <!-- mat-menu-item *ngIf="date!=null"  -->
+        <button mat-raised-button  color="accent" (click)="ExportTOExcelAvailabilitySpecialDataForSelectedMonth()"   [disabled]="dateAvailability==''||searchvalue==''" >
+        <mat-icon>file_download</mat-icon>
+       Export Excel
+        </button>
+        </div>
+    </mat-tab>
   </mat-tab-group>
 
 

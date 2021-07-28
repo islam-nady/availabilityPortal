@@ -32,5 +32,10 @@ ExportExcelAvailabilitydata(mon:number,year:number ,kind:string):Observable<Blob
   
 }
 
+ExportExcelAvailabilitySpecialdata(mon:number,year:number ,kind:string,info:string):Observable<Blob>{
+
+  return this.http.get(`${this.url}/ReportAvailabilityForSelectedMonthWithDefineInfo/`+mon+'/'+year+'/'+kind+'/'+info,{responseType: 'blob',headers: this.headers});
+  
+}
 
 }

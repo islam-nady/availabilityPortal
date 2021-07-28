@@ -84,9 +84,9 @@ ExportTOExcelAvailabilityDataForSelectedMonth(kind:string)
   this.reportService.ExportExcelAvailabilitydata(mon ,year,kind).subscribe(res=>{
 
     const blob = new Blob([res], { type : 'application/vnd.ms.excel' });
-    const file = new File([blob],  'AvailabilityData' + Date.now() +'.xlsx', { type: 'application/vnd.ms.excel' });
+    const file = new File([blob],  kind+'Data' + Date.now() +'.xlsx', { type: 'application/vnd.ms.excel' });
    
- saveAs(file,'AvailabilityData' + Date.now() +'.xlsx')
+ saveAs(file,kind+'Data' + Date.now() +'.xlsx')
  setTimeout(()=> this.loading=false,1000)
   },err=>{
     

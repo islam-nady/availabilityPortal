@@ -95,19 +95,27 @@ Export Excel
     </mat-tab>
 
 
-    <mat-tab label="Report For special data in month:"> 
-        <div class="tabContent">
-
+    <mat-tab label="Report For special data in month"> 
+        <div class="tabContent ">
+            <mat-form-field appearance="fill">
+                <mat-label>Choose an option</mat-label>
+                <mat-select id="select" [(ngModel)]="dropdownsearch" >
+                
+                  <mat-option value="nodeid">Node Id</mat-option>
+                  <mat-option value="customername">Account Name</mat-option>
+                  <mat-option value="customernumber">Account Number</mat-option>
+                  <mat-option value="orderid">Order Id</mat-option>
+                 
+                </mat-select>
+              </mat-form-field>
            
-            <select id="select" [(ngModel)]="dropdownsearch"  >
+          
+                <mat-form-field  appearance="fill">
+                    <mat-label>Search</mat-label>
+                    <input matInput name="Search" [(ngModel)]="searchvalue" placeholder="Search ">
+                   
+                  </mat-form-field>
                
-                <option  value="nodeid">Node Id</option>
-                <option value="customername">Account Name</option>
-                <option value="customernumber">Account Number</option>
-                <option value="orderid">Order Id</option>
-                </select>
-
-                <input  name="Search" [(ngModel)]="searchvalue" placeholder="Search " >
         
               
             <mat-form-field appearance="fill">
@@ -122,7 +130,8 @@ Export Excel
            
          <!-- (keyup.enter)="NodeTicket($event)" type="search" id="site-search"-->
         <!-- mat-menu-item *ngIf="date!=null"  -->
-        <button mat-raised-button  color="accent" (click)="ExportTOExcelAvailabilitySpecialDataForSelectedMonth()"   [disabled]="dateAvailability==''||searchvalue==''" >
+        <br>
+        <button mat-raised-button  color="accent" class="float-left" (click)="ExportTOExcelAvailabilitySpecialDataForSelectedMonth()"   [disabled]="dateAvailability==''||searchvalue==''" >
         <mat-icon>file_download</mat-icon>
        Export Excel
         </button>
